@@ -1,3 +1,4 @@
+
 module Whois::Domain
   TLD = {
     "VerisignGrs" => [:com, :net]
@@ -26,6 +27,33 @@ class Whois::Domain::Base
     while s.gets do ret += $_ end
     s.close
     @raw = ret
+  end
+  
+  # based on Michael Neumann's library
+  def attrs
+    return @attrs if @attrs
+    
+    actual_object = {}
+    raw.each do |i|
+      if i =~ self.class::ATTR_MATCH
+        if actual_object.has_key? $1 then
+          actual_object[$1] << $2
+        else
+          actual_object[$1] = [$2]
+        end
+      end
+    end
+    @attrs = actual_object
+  end
+  
+  def to_s
+    s = ""
+    raw.each do |i|
+      if i =~ self.class::ATTR_MATCH
+        s << "#{$1}: #{$2}\n"
+      end
+    end
+    s
   end
     
   def registrar_name
