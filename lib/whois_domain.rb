@@ -2,12 +2,13 @@ require 'date'
 
 module Whois::Domain
   TLD = {
-    "com" => "VerisignGrs"
+    "VerisignGrs" => [:com, :net]
   }
 
   def self.new(domain_name)
-    tld = domain_name.match(/.*\.([^\.]+)$/)[1]
-    const_get(TLD[tld]).new(domain_name)
+    tld = domain_name.match(/.*\.([^\.]+)$/)[1].to_sym
+    class_name = TLD.find{|c, tlds| tlds.include?(tld)}[0]
+    const_get(class_name).new(domain_name)
   end
 end
 
