@@ -1,4 +1,6 @@
-require "socket"
+require 'socket'
+require 'date'
+require 'time'
 
 module Whois
   

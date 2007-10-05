@@ -1,5 +1,3 @@
-require 'date'
-
 module Whois::Domain
   TLD = {
     "VerisignGrs" => [:com, :net]
