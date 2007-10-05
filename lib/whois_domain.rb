@@ -1,7 +1,8 @@
 
 module Whois::Domain
   TLD = {
-    "VerisignGrs" => [:com, :net]
+    "VerisignGrs" => [:com, :net],
+    "PublicInterest" => [:org]
   }
 
   def self.new(domain_name)
