@@ -2,7 +2,8 @@ require 'test/unit'
 require File.join(File.dirname(__FILE__), "..", "..", "lib", "whois")
 
 class VerisignGrsTest < Test::Unit::TestCase
-  def setup
+  def initialize(*args)
+    super
     @com = Whois::Domain.new("example.com")
     @net = Whois::Domain.new("example.net")
   end
