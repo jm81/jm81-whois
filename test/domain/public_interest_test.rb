@@ -1,54 +1,28 @@
 require 'test/unit'
+require File.join(File.dirname(__FILE__), "..", "test_helper")
 require File.join(File.dirname(__FILE__), "..", "..", "lib", "whois")
 
 class PublicInterestTest < Test::Unit::TestCase
-  ORG = Whois::Domain.new("example.org")
 
-  def setup
-    @org = ORG
+  def test_whois  
+    assert_whois_data(EXP_DATA.merge({:to_s => EXP_TO_S}))
   end
 
-  def test_initialize
-    assert_kind_of Whois::Domain::PublicInterest, @org
-  end
-  
-  def test_name
-    assert_equal "example.org", @org.name
-  end
-  
-  def test_dates
-    assert_equal Date.parse("2010-08-30").to_s, @org.expires_on.to_s, "expiration date"
-    assert_equal Date.parse("1995-08-31").to_s, @org.created_on.to_s, "creation date"
-    assert_equal Date.parse("2004-02-18").to_s, @org.updated_on.to_s, "updated date"
-    assert_nil @org.database_updated_at
-  end
-  
-  def test_status
-    assert_kind_of Array, @org.status
-    assert_equal ['DELETE PROHIBITED', 'RENEW PROHIBITED', 'TRANSFER PROHIBITED', 'UPDATE PROHIBITED'], @org.status
-  end
-  
-  def test_name_servers
-    assert_kind_of Array, @org.name_servers
-    assert_equal ['A.IANA-SERVERS.NET', 'B.IANA-SERVERS.NET'], @org.name_servers
-    assert_equal @org.name_servers, @org.ns, "ns is an alias for name_servers"
-  end
-  
-  def test_registrar_name
-    assert_equal "Internet Assigned Numbers Authority (IANA) (R193-LROR)", @org.registrar_name
-  end
-  
-  def test_whois_server
-    assert_equal "whois.pir.org", @org.whois_server
-  end
-  
-  def test_raw
-    assert_kind_of String, @org.raw
-    assert_match "Domain Name:EXAMPLE.ORG", @org.raw
-  end
-  
-  def test_to_s
-    exp = <<EOF
+  EXP_DATA = {
+    :name => "example.org",
+    :kind => "PublicInterest",
+    :created_on => "1995-08-31",
+    :updated_on => "2004-02-18",
+    :expires_on => "2010-08-30",
+    :database_updated_at => false,
+    :registrar_name => "Internet Assigned Numbers Authority (IANA) (R193-LROR)",
+    :whois_server => "whois.pir.org",
+    :raw_match => "Domain Name:EXAMPLE.ORG",
+    :status => ['DELETE PROHIBITED', 'RENEW PROHIBITED', 'TRANSFER PROHIBITED', 'UPDATE PROHIBITED'],
+    :name_servers => ['A.IANA-SERVERS.NET', 'B.IANA-SERVERS.NET']
+  }
+    
+  EXP_TO_S = <<EOF
 Domain ID: D2328855-LROR
 Domain Name: EXAMPLE.ORG
 Created On: 31-Aug-1995 04:00:00 UTC
@@ -98,6 +72,5 @@ Tech Email: res-dom@iana.org
 Name Server: A.IANA-SERVERS.NET
 Name Server: B.IANA-SERVERS.NET
 EOF
-    assert_equal exp, @org.to_s
-  end
+
 end
