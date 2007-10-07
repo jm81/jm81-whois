@@ -21,9 +21,9 @@ class Test::Unit::TestCase
     assert_kind_of Whois::Domain.const_get(exp[:kind]), d, "#{exp[:name]} should be an instance of Whois::Domain::#{exp[:kind]}"
     assert_equal exp[:name], d.name, "Verify that name returns same as name given"
     
-    assert_equal Date.parse(exp[:expires_on]).to_s, d.expires_on.to_s, "expiration date"
-    assert_equal Date.parse(exp[:created_on]).to_s, d.created_on.to_s, "creation date"
-    assert_equal Date.parse(exp[:updated_on]).to_s, d.updated_on.to_s, "updated date"
+    assert_equal(Date.parse(exp[:expires_on]).to_s, d.expires_on.to_s, "expiration date") unless exp[:expires_on].nil?
+    assert_equal(Date.parse(exp[:created_on]).to_s, d.created_on.to_s, "creation date") unless exp[:created_on].nil?
+    assert_equal(Date.parse(exp[:updated_on]).to_s, d.updated_on.to_s, "updated date") unless exp[:updated_on].nil?
     
     if exp[:database_updated_at] == false
       assert_nil d.database_updated_at, "no database_updated_at expected on this server"
