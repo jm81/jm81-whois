@@ -8,6 +8,10 @@ class CatTest < Test::Unit::TestCase
     assert_whois_data(EXP_DATA)
     assert Whois::Domain.new("not-reg-1234.cat").available?
   end
+  
+  def test_register_url
+    assert_equal "http://domini.cat/en_registrar.html", Whois::Domain.new("domini.cat").register_url
+  end
 
   EXP_DATA = {
     :name => "domini.cat",

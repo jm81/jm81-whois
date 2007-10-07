@@ -22,4 +22,8 @@ class Whois::Domain::Cat < Whois::Domain::Base
   def available?
     @raw =~ /NOT FOUND/
   end
+  
+  def register_url
+    "http://domini.cat/en_registrar.html"
+  end
 end
