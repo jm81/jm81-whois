@@ -8,4 +8,9 @@ class WhoisDomainTest < Test::Unit::TestCase
     assert !Whois::Domain.new("example.com").expired?
     assert !Whois::Domain.new("example.org").expired?
   end
+  
+  def test_register_url
+    assert_equal "https://www.securepaynet.net/gdshop/registrar/search.asp?prog_id=morgancr&domainToCheck=example.com&checkAvail=1", Whois::Domain.new("example.com").register_url
+    assert_equal "https://www.securepaynet.net/gdshop/registrar/search.asp?prog_id=morgancr&domainToCheck=example.org&checkAvail=1", Whois::Domain.new("example.org").register_url
+  end
 end

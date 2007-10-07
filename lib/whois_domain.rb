@@ -118,6 +118,11 @@ class Whois::Domain::Base
   def registered?
     !available?
   end
+  
+  # A url for registering this domain.
+  def register_url
+    "https://www.securepaynet.net/gdshop/registrar/search.asp?prog_id=morgancr&domainToCheck=#{name}&checkAvail=1"
+  end
 end
 
 Dir["#{File.dirname(__FILE__)}/domain/*.rb"].sort.each { |ext| require ext }
