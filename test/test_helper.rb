@@ -35,8 +35,10 @@ class Test::Unit::TestCase
     assert_equal exp[:status], d.status
 
     assert_kind_of Array, d.name_servers
-    assert_equal exp[:name_servers], d.name_servers
-    assert_equal d.name_servers, d.ns, "ns is an alias for name_servers"
+    unless exp[:name_servers].nil? # see CatTest
+      assert_equal exp[:name_servers], d.name_servers
+      assert_equal d.name_servers, d.ns, "ns is an alias for name_servers"
+    end
 
     assert_equal exp[:registrar_name], d.registrar_name
     assert_equal exp[:whois_server], d.whois_server
