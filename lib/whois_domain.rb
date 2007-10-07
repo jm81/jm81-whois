@@ -6,7 +6,8 @@ module Whois::Domain
     "Neustar" => [:biz, :us],
     "Aero" => [:aero],
     "Afilias" => [:info],
-    "Cat" => [:cat]
+    "Cat" => [:cat],
+    "Coop" => [:coop]
   }
 
   def self.new(domain_name)

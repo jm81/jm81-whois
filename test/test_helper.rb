@@ -31,10 +31,10 @@ class Test::Unit::TestCase
       assert_kind_of Time, d.database_updated_at, "database_updated_at should return a time object"
     end
   
-    assert_kind_of Array, d.status
+    assert_kind_of Array, d.status, "status should return an Array"
     assert_equal exp[:status], d.status
 
-    assert_kind_of Array, d.name_servers
+    assert_kind_of Array, d.name_servers, "name_server should return an Array"
     unless exp[:name_servers].nil? # see CatTest
       assert_equal exp[:name_servers], d.name_servers
       assert_equal d.name_servers, d.ns, "ns is an alias for name_servers"
