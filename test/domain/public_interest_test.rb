@@ -2,7 +2,7 @@ require 'test/unit'
 require File.join(File.dirname(__FILE__), "..", "test_helper")
 require File.join(File.dirname(__FILE__), "..", "..", "lib", "whois")
 
-class PublicInterestTest < Test::Unit::TestCase
+class Whois::Domain::PublicInterestTest < Test::Unit::TestCase
 
   def test_whois  
     assert_whois_data(EXP_DATA.merge({:to_s => EXP_TO_S}))

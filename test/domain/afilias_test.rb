@@ -2,7 +2,7 @@ require 'test/unit'
 require File.join(File.dirname(__FILE__), "..", "test_helper")
 require File.join(File.dirname(__FILE__), "..", "..", "lib", "whois")
 
-class AfiliasTest < Test::Unit::TestCase
+class Whois::Domain::AfiliasTest < Test::Unit::TestCase
 
   def test_whois  
     assert_whois_data(EXP_DATA)

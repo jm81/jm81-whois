@@ -2,7 +2,7 @@ require 'test/unit'
 require File.join(File.dirname(__FILE__), "..", "test_helper")
 require File.join(File.dirname(__FILE__), "..", "..", "lib", "whois")
 
-class NeustarTest < Test::Unit::TestCase
+class Whois::Domain::NeustarTest < Test::Unit::TestCase
 
   def test_biz
     assert_whois_data(EXP_BIZ.merge({:to_s => EXP_TO_S}))
