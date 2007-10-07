@@ -4,10 +4,12 @@ require File.join(File.dirname(__FILE__), "..", "..", "lib", "whois")
 class VerisignGrsTest < Test::Unit::TestCase
   def test_com
     assert_whois_data(EXP_COM.merge({:to_s => EXP_COM_TO_S}))
+    assert Whois::Domain.new("not-reg-1234.com").available?
   end
   
   def test_net
     assert_whois_data(EXP_NET)
+    assert Whois::Domain.new("not-reg-1234.net").available?
   end
 
   EXP_COM = {

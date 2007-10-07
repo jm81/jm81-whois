@@ -27,4 +27,8 @@ class Whois::Domain::Neustar < Whois::Domain::Base
   def whois_server
     host
   end
+  
+  def available?
+    @raw =~ /Not found:/
+  end
 end

@@ -6,10 +6,12 @@ class NeustarTest < Test::Unit::TestCase
 
   def test_biz
     assert_whois_data(EXP_BIZ.merge({:to_s => EXP_TO_S}))
+    assert Whois::Domain.new("not-reg-1234.biz").available?
   end
   
   def test_us
     assert_whois_data(EXP_US)
+    assert Whois::Domain.new("not-reg-1234.us").available?
   end
 
   EXP_BIZ = {

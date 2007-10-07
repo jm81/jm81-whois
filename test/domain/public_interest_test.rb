@@ -6,6 +6,7 @@ class PublicInterestTest < Test::Unit::TestCase
 
   def test_whois  
     assert_whois_data(EXP_DATA.merge({:to_s => EXP_TO_S}))
+    assert Whois::Domain.new("not-reg-1234.org").available?
   end
 
   EXP_DATA = {

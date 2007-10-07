@@ -47,5 +47,8 @@ class Test::Unit::TestCase
     if exp[:to_s]
       assert_equal exp[:to_s], d.to_s
     end
+    
+    assert !d.available?
+    assert d.registered?
   end
 end

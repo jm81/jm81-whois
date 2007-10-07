@@ -7,4 +7,8 @@ class Whois::Domain::VerisignGrs < Whois::Domain::Base
       Time.parse($1)
     end
   end
+  
+  def available?
+    @raw =~ /^No match for/
+  end
 end

@@ -17,4 +17,8 @@ class Whois::Domain::PublicInterest < Whois::Domain::Base
   def whois_server
     HOST
   end
+  
+  def available?
+    @raw =~ /NOT FOUND/
+  end
 end
