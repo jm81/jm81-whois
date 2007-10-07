@@ -1,6 +1,13 @@
 class Whois::Domain::Neustar < Whois::Domain::Base
-  HOST = "whois.biz"
   ATTR_MATCH = /^([^:]+):\s{2,}(.*)$/
+
+  def host
+    if @name.match(/.*\.([^\.]+)$/)[1].to_sym == :biz
+      "whois.biz"
+    else
+      "whois.nic.us"
+    end
+  end
 
   def registrar_name
     attrs["Sponsoring Registrar"] ? attrs["Sponsoring Registrar"][0] : nil
@@ -30,6 +37,6 @@ class Whois::Domain::Neustar < Whois::Domain::Base
   
   # No whois server listed for .biz domains, so always return the whois server used here.
   def whois_server
-    HOST
+    host
   end
 end

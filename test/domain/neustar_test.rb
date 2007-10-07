@@ -4,11 +4,15 @@ require File.join(File.dirname(__FILE__), "..", "..", "lib", "whois")
 
 class NeustarTest < Test::Unit::TestCase
 
-  def test_whois  
-    assert_whois_data(EXP_DATA.merge({:to_s => EXP_TO_S}))
+  def test_biz
+    assert_whois_data(EXP_BIZ.merge({:to_s => EXP_TO_S}))
+  end
+  
+  def test_us
+    assert_whois_data(EXP_US)
   end
 
-  EXP_DATA = {
+  EXP_BIZ = {
     :name => "neulevel.biz",
     :kind => "Neustar",
     :created_on => "2001-11-07",
@@ -19,6 +23,19 @@ class NeustarTest < Test::Unit::TestCase
     :raw_match => "Domain Name:                                 NEULEVEL.BIZ",
     :status => ['clientDeleteProhibited', 'clientTransferProhibited', 'clientUpdateProhibited', 'serverDeleteProhibited', 'serverTransferProhibited', 'serverUpdateProhibited'],
     :name_servers => ['PDNS1.ULTRADNS.NET', 'PDNS2.ULTRADNS.NET', 'PDNS3.ULTRADNS.ORG', 'PDNS4.ULTRADNS.ORG', 'PDNS5.ULTRADNS.INFO', 'PDNS6.ULTRADNS.CO.UK']
+  }
+  
+  EXP_US = {
+    :name => "neustar.us",
+    :kind => "Neustar",
+    :created_on => "2002-04-18",
+    :updated_on => "2007-04-19",
+    :expires_on => "2008-04-17",
+    :registrar_name => "REGISTRY REGISTRAR",
+    :whois_server => "whois.nic.us",
+    :raw_match => "Domain Name:                                 NEUSTAR.US",
+    :status => ['clientDeleteProhibited', 'clientTransferProhibited', 'serverDeleteProhibited', 'serverTransferProhibited', 'serverUpdateProhibited'],
+    :name_servers => ['GDNS1.ULTRADNS.NET', 'GDNS2.ULTRADNS.NET']
   }
   
   EXP_TO_S = <<EOF
