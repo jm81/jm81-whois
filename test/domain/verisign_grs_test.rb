@@ -1,4 +1,5 @@
 require 'test/unit'
+require File.join(File.dirname(__FILE__), "..", "test_helper")
 require File.join(File.dirname(__FILE__), "..", "..", "lib", "whois")
 
 class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
@@ -10,6 +11,11 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
   def test_net
     assert_whois_data(EXP_NET)
     assert Whois::Domain.new("not-reg-1234.net").available?
+  end
+  
+  def test_jobs
+    assert_whois_data(EXP_JOBS)
+    assert Whois::Domain.new("not-reg-1234.jobs").available?
   end
 
   EXP_COM = {
@@ -36,6 +42,19 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :raw_match => "Domain Name: EXAMPLE.NET",
     :status => ['clientDeleteProhibited', 'clientTransferProhibited', 'clientUpdateProhibited'],
     :name_servers => ['A.IANA-SERVERS.NET', 'B.IANA-SERVERS.NET']
+  }
+  
+  EXP_JOBS = {
+    :name => "goto.jobs",
+    :kind => "VerisignGrs",
+    :created_on => "2006-02-21",
+    :updated_on => "2007-02-21",
+    :expires_on => "2008-02-21",
+    :registrar_name => "ENCIRCA INC",
+    :whois_server => "whois.encirca.com",
+    :raw_match => "Domain Name: GOTO.JOBS",
+    :status => ['ACTIVE'],
+    :name_servers => ['NS2.REGISTRY.JOBS', 'NS1.REGISTRY.JOBS']
   }
   
   EXP_COM_TO_S = <<EOF
