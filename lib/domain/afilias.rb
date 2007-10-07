@@ -1,6 +1,7 @@
 class Whois::Domain::Afilias < Whois::Domain::Base
   HOST = "whois.afilias.net"
   ATTR_MATCH = /^([^:]+):(\S.*)\r$/
+  responds_to :info
 
   ATTR_NAMES = {
     :registrar_name => "Sponsoring Registrar",

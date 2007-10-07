@@ -1,5 +1,6 @@
 class Whois::Domain::Neustar < Whois::Domain::Base
   ATTR_MATCH = /^([^:]+):\s{2,}(.*)$/
+  responds_to :biz, :us
 
   ATTR_NAMES = {
     :registrar_name => "Sponsoring Registrar",

@@ -1,17 +1,13 @@
 module Whois::Domain
-  TLD = {
-    "VerisignGrs" => [:com, :net],
-    "PublicInterest" => [:org],
-    "Neustar" => [:biz, :us],
-    "Aero" => [:aero],
-    "Afilias" => [:info],
-    "Cat" => [:cat],
-    "Coop" => [:coop]
-  }
+  @@tlds = {}
+
+  def self.tlds
+    @@tlds
+  end
 
   def self.new(domain_name)
     tld = domain_name.match(/.*\.([^\.]+)$/)[1].to_sym
-    class_name = TLD.find{|c, tlds| tlds.include?(tld)}[0]
+    class_name = @@tlds.find{|c, tlds_ary| tlds_ary.include?(tld)}[0]
     const_get(class_name).new(domain_name)
   end
 end

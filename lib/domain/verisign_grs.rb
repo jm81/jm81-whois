@@ -1,6 +1,7 @@
 class Whois::Domain::VerisignGrs < Whois::Domain::Base
   HOST = "whois.verisign-grs.com"
   ATTR_MATCH = /^   ([^:]+):\W*(.*)$/
+  responds_to :com, :net
   
   def database_updated_at
     if(@raw =~ /Last update of whois database: ([^<]*)/)

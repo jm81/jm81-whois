@@ -1,6 +1,7 @@
 class Whois::Domain::Coop < Whois::Domain::Base
   ATTR_MATCH = /^([^:]+):\s{2,}(.*)\r$/
   HOST = "whois.nic.coop"
+  responds_to :coop
 
   ATTR_NAMES = {
     :registrar_name => "Sponsoring registrar",

@@ -1,6 +1,7 @@
 class Whois::Domain::Aero < Whois::Domain::Base
   HOST = "whois.aero"
   ATTR_MATCH = /^([^:]+):(\S.*)\r$/
+  responds_to :aero
 
   ATTR_NAMES = {
     :registrar_name => "Sponsoring Registrar",

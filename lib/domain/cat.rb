@@ -1,6 +1,7 @@
 class Whois::Domain::Cat < Whois::Domain::Base
   HOST = "whois.cat"
   ATTR_MATCH = /^([^:]+):\s(.*)\r$/
+  responds_to :cat
 
   ATTR_NAMES = {
     :registrar_name => "Registrar ID",
