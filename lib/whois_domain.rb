@@ -95,7 +95,6 @@ class Whois::Domain::Base
       attr_date(method_name.to_sym)
     end
   end
-  
 
   def attr_array(attr_name)
     attrs[attr_names[attr_name]]
@@ -108,6 +107,10 @@ class Whois::Domain::Base
   end
   
   alias :ns :name_servers
+  
+  def expired?
+    expires_on < Date.today
+  end
 end
 
 Dir["#{File.dirname(__FILE__)}/domain/*.rb"].sort.each { |ext| require ext }
