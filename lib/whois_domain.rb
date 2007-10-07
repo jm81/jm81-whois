@@ -21,9 +21,13 @@ class Whois::Domain::Base
     query
   end
   
+  def host
+    self.class::HOST
+  end
+  
   # based on Michael Neumann's library
   def query
-    s = TCPsocket.open(self.class::HOST, 43)
+    s = TCPsocket.open(host, 43)
     s.write("#{@name}\n")
     ret = ""
     while s.gets do ret += $_ end
