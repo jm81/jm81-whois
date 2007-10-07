@@ -16,6 +16,16 @@ end
 class Whois::Domain::Base
   attr_reader :name, :raw
   
+  ATTR_NAMES = {
+    :registrar_name => "Registrar",
+    :created_on => "Creation Date",
+    :updated_on => "Updated Date",
+    :expires_on => "Expiration Date",
+    :status => "Status",
+    :name_servers => "Name Server",
+    :whois_server => "Whois Server"
+  }
+  
   def initialize(name)
     @name = name
     query
@@ -23,6 +33,10 @@ class Whois::Domain::Base
   
   def host
     self.class::HOST
+  end
+  
+  def attr_names
+    @attr_names ||= ATTR_NAMES.merge(self.class::ATTR_NAMES)
   end
   
   # based on Michael Neumann's library
@@ -61,36 +75,39 @@ class Whois::Domain::Base
     end
     s
   end
-    
-  def registrar_name
-    attrs["Registrar"] ? attrs["Registrar"][0] : nil
-  end
-    
-  def created_on
-    attrs["Creation Date"] ? Date.parse(attrs["Creation Date"][0]) : nil
+  
+  def attr_single(attr_name)
+    attrs[attr_names[attr_name]] ? attrs[attr_names[attr_name]][0] : nil
   end
   
-  def updated_on
-    attrs["Updated Date"] ? Date.parse(attrs["Updated Date"][0]) : nil
+  %w{registrar_name whois_server}.each do |method_name|
+    define_method method_name do
+      attr_single(method_name.to_sym)
+    end
   end
   
-  def expires_on
-    attrs["Expiration Date"] ? Date.parse(attrs["Expiration Date"][0]) : nil
+  def attr_date(attr_name)
+    attrs[attr_names[attr_name]] ? Date.parse(attrs[attr_names[attr_name]][0]) : nil
   end
   
-  def status
-    attrs["Status"]
+  %w{created_on updated_on expires_on}.each do |method_name|
+    define_method method_name do
+      attr_date(method_name.to_sym)
+    end
   end
   
-  def name_servers
-    attrs["Name Server"]
+
+  def attr_array(attr_name)
+    attrs[attr_names[attr_name]]
+  end
+  
+  %w{status name_servers}.each do |method_name|
+    define_method method_name do
+      attr_array(method_name.to_sym)
+    end
   end
   
   alias :ns :name_servers
-  
-  def whois_server
-    attrs["Whois Server"] ? attrs["Whois Server"][0] : nil
-  end
 end
 
 Dir["#{File.dirname(__FILE__)}/domain/*.rb"].sort.each { |ext| require ext }
