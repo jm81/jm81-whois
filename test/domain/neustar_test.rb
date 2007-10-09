@@ -14,6 +14,11 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     assert Whois::Domain.new("not-reg-1234.us").available?
   end
 
+  def test_travel
+    assert_whois_data(EXP_TRAVEL)
+    assert Whois::Domain.new("not-reg-1234.travel").available?
+  end
+
   EXP_BIZ = {
     :name => "neulevel.biz",
     :kind => "Neustar",
@@ -38,6 +43,20 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     :raw_match => "Domain Name:                                 NEUSTAR.US",
     :status => ['clientDeleteProhibited', 'clientTransferProhibited', 'serverDeleteProhibited', 'serverTransferProhibited', 'serverUpdateProhibited'],
     :name_servers => ['GDNS1.ULTRADNS.NET', 'GDNS2.ULTRADNS.NET']
+  }
+  
+  EXP_TRAVEL = {
+    :name => "travel.travel",
+    :kind => "Neustar",
+    :created_on => "2005-10-04",
+    :updated_on => "2006-07-23",
+    :expires_on => "2010-10-03",
+    :database_updated_at => true,
+    :registrar_name => "NEUSTAR GATEWAY",
+    :whois_server => "whois.nic.travel",
+    :raw_match => "Domain Name:                                 TRAVEL.TRAVEL",
+    :status => ['ok'],
+    :name_servers => ['NETSYS.COM', 'NS01-MIA.THEGLOBE.COM']
   }
   
   EXP_TO_S = <<EOF

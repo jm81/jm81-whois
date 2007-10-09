@@ -1,6 +1,6 @@
 class Whois::Domain::Neustar < Whois::Domain::Base
   ATTR_MATCH = /^([^:]+):\s{2,}(.*)$/
-  responds_to :biz, :us
+  responds_to :biz, :us, :travel
 
   ATTR_NAMES = {
     :registrar_name => "Sponsoring Registrar",
@@ -11,10 +11,10 @@ class Whois::Domain::Neustar < Whois::Domain::Base
   }
 
   def host
-    if @name.match(/.*\.([^\.]+)$/)[1].to_sym == :biz
-      "whois.biz"
-    else
-      "whois.nic.us"
+    case @name.match(/.*\.([^\.]+)$/)[1]
+    when 'biz' then 'whois.biz'
+    when 'us'  then 'whois.nic.us'
+    when 'travel' then 'whois.nic.travel'
     end
   end
 
@@ -24,12 +24,19 @@ class Whois::Domain::Neustar < Whois::Domain::Base
     end
   end
 
-  # No whois server listed for .biz domains, so always return the whois server used here.
   def whois_server
     host
   end
   
   def available?
     @raw =~ /Not found:/
+  end
+  
+  def register_url
+    if @name.match(/.*\.([^\.]+)$/)[1] == "travel"
+      "http://www.travel.travel/authenticationframe.htm"
+    else
+      super
+    end
   end
 end
