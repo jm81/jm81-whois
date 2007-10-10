@@ -86,7 +86,7 @@ class Whois::Domain::Base
   end
 
   def attr_array(attr_name)
-    attrs[attr_names[attr_name]]
+    attrs[attr_names[attr_name]] || []
   end
   
   %w{status name_servers}.each do |method_name|
