@@ -95,7 +95,9 @@ class Whois::Domain::Base
     end
   end
   
-  alias :ns :name_servers
+  def ns
+    name_servers
+  end
   
   def expired?
     expires_on && (expires_on < Date.today)
