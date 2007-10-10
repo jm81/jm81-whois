@@ -1,13 +1,13 @@
 class Whois::Domain::VerisignGrs < Whois::Domain::Base
   HOST = "whois.verisign-grs.com"
   ATTR_MATCH = /^   ([^:]+):\W*(.*)$/
-  responds_to :com, :net, :jobs
+  responds_to :com, :net, :jobs, :tv
   
   def host
-    if @name.match(/.*\.([^\.]+)$/)[1].to_sym == :jobs
-      "jobswhois.verisign-grs.com"
-    else
-      "whois.verisign-grs.com"
+    case @name.match(/.*\.([^\.]+)$/)[1]
+    when 'jobs' then "jobswhois.verisign-grs.com"
+    when 'tv'   then "tvwhois.verisign-grs.com"  
+    else             "whois.verisign-grs.com"
     end
   end
   

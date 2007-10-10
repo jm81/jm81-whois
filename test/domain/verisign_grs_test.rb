@@ -18,6 +18,11 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     assert Whois::Domain.new("not-reg-1234.jobs").available?
   end
 
+  def test_tv
+    assert_whois_data(EXP_TV)
+    assert Whois::Domain.new("not-reg-1234.tv").available?
+  end
+
   EXP_COM = {
     :name => "example.com",
     :kind => "VerisignGrs",
@@ -55,6 +60,19 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :raw_match => "Domain Name: GOTO.JOBS",
     :status => ['ACTIVE'],
     :name_servers => ['NS2.REGISTRY.JOBS', 'NS1.REGISTRY.JOBS']
+  }
+  
+  EXP_TV = {
+    :name => "www.tv",
+    :kind => "VerisignGrs",
+    :created_on => "2000-05-01",
+    :updated_on => "2007-03-08",
+    :expires_on => "2038-01-18",
+    :registrar_name => "TV CORPORATION",
+    :whois_server => "whois.www.tv",
+    :raw_match => "Domain Name: WWW.TV",
+    :status => ['ACTIVE'],
+    :name_servers => ['A4.NSTLD.COM', 'G4.NSTLD.COM', 'H4.NSTLD.COM', 'J4.NSTLD.COM', 'F4.NSTLD.COM', 'L4.NSTLD.COM']
   }
   
   EXP_COM_TO_S = <<EOF
