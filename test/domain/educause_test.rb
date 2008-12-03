@@ -13,14 +13,14 @@ class Whois::Domain::EducauseTest < Test::Unit::TestCase
     :name => "educause.edu",
     :kind => "Educause",
     :created_on => "1998-03-11",
-    :updated_on => "2007-09-08",
-    :expires_on => "2008-07-31",
+    :updated_on => "2008-09-18",
+    :expires_on => "2009-07-31",
     :database_updated_at => false,
     :registrar_name => "Educause",
     :whois_server => "whois.educause.edu",
     :raw_match => "Domain Name: EDUCAUSE.EDU",
     :status => [],
-    :name_servers => ['NS1.EDUCAUSE.EDU', 'NS2.EDUCAUSE.EDU']
+    :name_servers => ['NS5.EDUCAUSE.EDU', 'NS3.EDUCAUSE.EDU', 'NS4.EDUCAUSE.EDU']
   }
 
 end
