@@ -53,9 +53,9 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "goto.jobs",
     :kind => "VerisignGrs",
     :created_on => "2006-02-21",
-    :updated_on => "2007-02-21",
-    :expires_on => "2008-02-21",
-    :registrar_name => "ENCIRCA INC",
+    :updated_on => "2008-02-20",
+    :expires_on => "2009-02-21",
+    :registrar_name => "ENCIRCA, INC",
     :whois_server => "whois.encirca.com",
     :raw_match => "Domain Name: GOTO.JOBS",
     :status => ['ACTIVE'],
@@ -72,7 +72,7 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :whois_server => "whois.www.tv",
     :raw_match => "Domain Name: WWW.TV",
     :status => ['ACTIVE'],
-    :name_servers => ['A4.NSTLD.COM', 'G4.NSTLD.COM', 'H4.NSTLD.COM', 'J4.NSTLD.COM', 'F4.NSTLD.COM', 'L4.NSTLD.COM']
+    :name_servers => ['A4.NSTLD.COM', 'F4.NSTLD.COM', 'G4.NSTLD.COM', 'H4.NSTLD.COM', 'J4.NSTLD.COM', 'L4.NSTLD.COM']
   }
   
   EXP_COM_TO_S = <<EOF
