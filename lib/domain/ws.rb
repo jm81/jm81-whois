@@ -32,7 +32,7 @@ class Whois::Domain::Ws < Whois::Domain::Base
   end
   
   def created_on
-    if @raw =~ /Domain created on (.*)$/
+    if @raw =~ /Domain Created: (.*)$/
       Date.parse($1)
     else
       nil
@@ -40,7 +40,15 @@ class Whois::Domain::Ws < Whois::Domain::Base
   end
 
   def updated_on
-    if @raw =~ /Domain last updated on (.*)$/
+    if @raw =~ /Domain Last Updated: (.*)$/
+      Date.parse($1)
+    else
+      nil
+    end
+  end
+  
+  def expires_on
+    if @raw =~ /Domain Currently Expires: (.*)$/
       Date.parse($1)
     else
       nil
