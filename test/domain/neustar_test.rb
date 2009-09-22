@@ -81,7 +81,7 @@ Registrant Country: United States
 Registrant Country Code: US
 Registrant Phone Number: +1.5714345757
 Registrant Facsimile Number: +1.5714345758
-Registrant Email: support@neulevel.biz
+Registrant Email: support@NeuStar.biz
 Administrative Contact ID: NEULEVEL1
 Administrative Contact Name: NeuStar, Inc.
 Administrative Contact Organization: NeuStar, Inc.
@@ -94,7 +94,7 @@ Administrative Contact Country: United States
 Administrative Contact Country Code: US
 Administrative Contact Phone Number: +1.5714345757
 Administrative Contact Facsimile Number: +1.5714345758
-Administrative Contact Email: support@neulevel.biz
+Administrative Contact Email: support@NeuStar.biz
 Billing Contact ID: NEULEVEL1
 Billing Contact Name: NeuStar, Inc.
 Billing Contact Organization: NeuStar, Inc.
@@ -107,7 +107,7 @@ Billing Contact Country: United States
 Billing Contact Country Code: US
 Billing Contact Phone Number: +1.5714345757
 Billing Contact Facsimile Number: +1.5714345758
-Billing Contact Email: support@neulevel.biz
+Billing Contact Email: support@NeuStar.biz
 Technical Contact ID: NEULEVEL1
 Technical Contact Name: NeuStar, Inc.
 Technical Contact Organization: NeuStar, Inc.
@@ -120,7 +120,7 @@ Technical Contact Country: United States
 Technical Contact Country Code: US
 Technical Contact Phone Number: +1.5714345757
 Technical Contact Facsimile Number: +1.5714345758
-Technical Contact Email: support@neulevel.biz
+Technical Contact Email: support@NeuStar.biz
 Name Server: PDNS1.ULTRADNS.NET
 Name Server: PDNS2.ULTRADNS.NET
 Name Server: PDNS3.ULTRADNS.ORG
@@ -130,7 +130,7 @@ Name Server: PDNS6.ULTRADNS.CO.UK
 Created by Registrar: REGISTRY REGISTRAR
 Last Updated by Registrar: BATCHCSR
 Domain Registration Date: Wed Nov 07 00:01:00 GMT 2001
-Domain Expiration Date: Thu Nov 06 23:59:00 GMT 2008
-Domain Last Updated Date: Sat Dec 22 01:40:09 GMT 2007
+Domain Expiration Date: Fri Nov 06 23:59:00 GMT 2009
+Domain Last Updated Date: Mon Dec 22 01:40:11 GMT 2008
 EOF
 end
