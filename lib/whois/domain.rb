@@ -12,7 +12,7 @@ module Whois::Domain
   end
 end
 
-require 'domain/base.rb'
+require 'whois/domain/base.rb'
 Dir.new(File.dirname(__FILE__) + '/domain').each do |file|
-  require('domain/' + File.basename(file)) if File.extname(file) == ".rb"
+  require('whois/domain/' + File.basename(file)) if File.extname(file) == ".rb"
 end

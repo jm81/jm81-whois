@@ -6,4 +6,4 @@ module Whois
   
 end
 
-require 'whois_domain'
+require 'whois/domain'
