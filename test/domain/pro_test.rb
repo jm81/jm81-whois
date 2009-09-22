@@ -1,6 +1,4 @@
-require 'test/unit'
-require File.join(File.dirname(__FILE__), "..", "test_helper")
-require File.join(File.dirname(__FILE__), "..", "..", "lib", "whois")
+require 'test_helper'
 
 class Whois::Domain::ProTest < Test::Unit::TestCase
   def test_pro

@@ -12,5 +12,7 @@ module Whois::Domain
   end
 end
 
-require "#{File.dirname(__FILE__)}/domain/base.rb"
-Dir["#{File.dirname(__FILE__)}/domain/*.rb"].sort.each { |ext| require ext }
+require 'domain/base.rb'
+Dir.new(File.dirname(__FILE__) + '/domain').each do |file|
+  require('domain/' + File.basename(file)) if File.extname(file) == ".rb"
+end

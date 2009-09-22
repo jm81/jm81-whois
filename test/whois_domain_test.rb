@@ -1,5 +1,4 @@
-require 'test/unit'
-require File.join(File.dirname(__FILE__), "..", "lib", "whois")
+require 'test_helper'
 
 # Test Whois::Domain methods that are generic to all servers
 class Whois::Domain::BaseTest < Test::Unit::TestCase

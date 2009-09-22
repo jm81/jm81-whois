@@ -1,3 +1,6 @@
+require 'test/unit'
+require 'whois'
+
 class Test::Unit::TestCase
   
   # +exp+ expects a hash representing expected results (although +name+ also indicates
