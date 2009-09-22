@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
      "lib/whois/domain/public_interest.rb",
      "lib/whois/domain/verisign_grs.rb",
      "lib/whois/domain/ws.rb",
-     "tasks/whois_tasks.rake",
+     "ruby-whois.gemspec",
      "test/test_helper.rb",
      "test/whois/domain/aero_test.rb",
      "test/whois/domain/afilias_test.rb",
