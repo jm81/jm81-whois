@@ -10,17 +10,17 @@ class Whois::Domain::NameTest < Test::Unit::TestCase
   end
 
   EXP_DATA = {
-    :name => "john.smith.name",
+    :name => "joe.smith.name",
     :kind => "Name",
-    :created_on => "2002-01-23",
-    :updated_on => "2008-01-30",
-    :expires_on => "2009-01-29",
+    :created_on => "2007-08-08",
+    :updated_on => "2009-08-20",
+    :expires_on => "2011-08-08",
     :database_updated_at => false,
-    :registrar_name => "eNom, Inc.",
+    :registrar_name => "Tucows Inc.",
     :whois_server => "whois.nic.name",
-    :raw_match => "Domain Name: JOHN.SMITH.NAME",
-    :status => ['ok'],
-    :name_servers => ['NS1.MYDOMAIN.COM', 'NS2.MYDOMAIN.COM', 'NS3.MYDOMAIN.COM', 'NS4.MYDOMAIN.COM']
+    :raw_match => "Domain Name: JOE.SMITH.NAME",
+    :status => ["clientTransferProhibited", "clientUpdateProhibited"],
+    :name_servers => ['NS.123-REG.CO.UK', 'NS2.123-REG.CO.UK']
   }
 
 end
