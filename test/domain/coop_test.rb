@@ -6,7 +6,7 @@ class Whois::Domain::CoopTest < Test::Unit::TestCase
 
   def test_coop
     assert_whois_data(EXP_COOP)
-    assert Whois::Domain.new("not-reg-1234.coop").available?
+    assert Whois::Domain.new("not-reg-0987.coop").available?
   end
   
   def test_register_url

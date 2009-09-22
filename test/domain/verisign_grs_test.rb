@@ -53,8 +53,8 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "goto.jobs",
     :kind => "VerisignGrs",
     :created_on => "2006-02-21",
-    :updated_on => "2008-02-20",
-    :expires_on => "2009-02-21",
+    :updated_on => "2009-02-20",
+    :expires_on => "2010-02-21",
     :registrar_name => "ENCIRCA, INC",
     :whois_server => "whois.encirca.com",
     :raw_match => "Domain Name: GOTO.JOBS",
@@ -66,13 +66,13 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "www.tv",
     :kind => "VerisignGrs",
     :created_on => "2000-05-01",
-    :updated_on => "2007-03-08",
+    :updated_on => "2009-01-08",
     :expires_on => "2038-01-18",
-    :registrar_name => "TV CORPORATION",
-    :whois_server => "whois.www.tv",
+    :registrar_name => "TUCOWS INC.",
+    :whois_server => "whois.tucows.com",
     :raw_match => "Domain Name: WWW.TV",
-    :status => ['ACTIVE'],
-    :name_servers => ['A4.NSTLD.COM', 'F4.NSTLD.COM', 'G4.NSTLD.COM', 'H4.NSTLD.COM', 'J4.NSTLD.COM', 'L4.NSTLD.COM']
+    :status => ["CLIENT-XFER-PROHIBITED", "CLIENT-UPDATE-PROHIBITED"],
+    :name_servers => ['A4.NSTLD.COM', 'F4.NSTLD.COM', 'G4.NSTLD.COM', 'L4.NSTLD.COM']
   }
   
   EXP_COM_TO_S = <<EOF

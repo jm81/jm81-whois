@@ -13,7 +13,7 @@ class Whois::Domain::MobiTest < Test::Unit::TestCase
     :name => "mtld.mobi",
     :kind => "Mobi",
     :created_on => "2006-05-11",
-    :updated_on => "2008-04-09",
+    :updated_on => "2008-12-04",
     :expires_on => "2010-05-11",
     :database_updated_at => false,
     :registrar_name => "MarkMonitor Inc (292)",
