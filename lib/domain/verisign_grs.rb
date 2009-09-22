@@ -11,6 +11,19 @@ class Whois::Domain::VerisignGrs < Whois::Domain::Base
     end
   end
   
+  # For best results, this use object = name format.
+  # e.g. domain = john.smith.name
+  def query
+    s = TCPsocket.open(host, 43)
+    s.write("domain = #{@name}\n")
+    ret = ""
+    while s.gets do
+      ret += $_
+    end
+    s.close
+    @raw = ret
+  end
+  
   def database_updated_at
     if(@raw =~ /Last update of whois database: ([^<]*)/)
       Time.parse($1)
