@@ -1,14 +1,13 @@
 class Whois::Domain::Pro < Whois::Domain::Base
   HOST = "whois.registrypro.pro"
-  ATTR_MATCH = /^  ([^:]+):\W*(.*)$/
+  ATTR_MATCH = /^([^:]+):\W*(.*)\r$/
   responds_to :pro
   
   ATTR_NAMES = {
-    :registrar_name => "Registrar",
-    :created_on => "Creation date",
-    :updated_on => "Last updated",
-    :expires_on => "Expiration date",
-    :status => "Domain statuses"
+    :registrar_name => "Sponsoring Registrar",
+    :created_on => "Created On",
+    :updated_on => "Last Updated On",
+    :expires_on => "Expiration Date"
   }
   
   def database_updated_at
@@ -16,26 +15,9 @@ class Whois::Domain::Pro < Whois::Domain::Base
   end
   
   def status
-    attrs["Domain statuses"] ? attrs["Domain statuses"][0].split(",").collect{|d| d.strip} : nil
+    attrs["Status"] ? attrs["Status"][0].split(",").collect{|d| d.strip} : nil
   end
   
-  def name_servers
-    found = false
-    ns_ary = []
-    @raw.each_line do |l|
-      if l =~ /Domain servers in listed order:/
-        found = true
-      elsif found && !l.strip.empty?
-        ns_ary << l.strip
-      end
-    end
-    ns_ary
-  end
-
-  def ns
-    name_servers
-  end
-
   def whois_server
     HOST
   end
@@ -45,6 +27,6 @@ class Whois::Domain::Pro < Whois::Domain::Base
   end
 
   def available?
-    @raw =~ /^Unknown domain/
+    @raw =~ /^No match/
   end
 end

@@ -21,9 +21,9 @@ class Whois::Domain::ProTest < Test::Unit::TestCase
     :database_updated_at => false,
     :registrar_name => "internal",
     :whois_server => "whois.registrypro.pro",
-    :raw_match => "Domain name:            registrypro.pro",
+    :raw_match => "Domain Name:REGISTRYPRO.PRO",
     :status => ['serverDeleteProhibited'],
-    :name_servers => ['a.gtld.pro', 'a.gtld.pro']
+    :name_servers => ['A.GTLD.PRO', 'B.GTLD.PRO', 'C.GTLD.PRO', 'D.GTLD.PRO']
   }
   
 end
