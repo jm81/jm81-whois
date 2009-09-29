@@ -6,8 +6,9 @@ class Whois::Domain::Ws < Whois::Domain::Base
   ATTR_NAMES = {
     :registrar_name => "Registrar Name",
     :whois_server => "Registrar Whois",
-    :created_on => "Domain created on",
-    :updated_on => "Domain last updated on"
+    :created_on => "Domain Created",
+    :updated_on => "Domain Last Updated",
+    :expires_on => "Domain Currently Expires"
   }
   
   def available?
@@ -26,29 +27,4 @@ class Whois::Domain::Ws < Whois::Domain::Base
     end
     ns_ary
   end
-  
-  def created_on
-    if @raw =~ /Domain Created: (.*)$/
-      Date.parse($1)
-    else
-      nil
-    end
-  end
-
-  def updated_on
-    if @raw =~ /Domain Last Updated: (.*)$/
-      Date.parse($1)
-    else
-      nil
-    end
-  end
-  
-  def expires_on
-    if @raw =~ /Domain Currently Expires: (.*)$/
-      Date.parse($1)
-    else
-      nil
-    end
-  end
-  
 end
