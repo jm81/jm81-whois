@@ -58,6 +58,8 @@ class Whois::Domain::Base
     s.close
   end
   
+  private :attr_names, :query_string, :query
+  
   # Get Hash of attributes, by iterating through each line of +@raw+. If the
   # line matches the class's ATTR_MATCH constant, it is added to the +@attrs+
   # Hash. Each elements of +attrs+  is an Array, to allow for multiple lines
@@ -95,20 +97,6 @@ class Whois::Domain::Base
     attrs[attr_names[attr_name]] ? attrs[attr_names[attr_name]][0] : nil
   end
   
-  # Return the whois_server used for getting details for this domain. For many
-  # TLD's, all data is served from the primary whois server. A few TLD's have
-  # details on separate servers. Return +host+ unless a whois_server is included
-  # in the whois data.
-  def whois_server
-    attr_single(:whois_server) || host
-  end
-  
-  %w{registrar_name}.each do |method_name|
-    define_method method_name do
-      attr_single(method_name.to_sym)
-    end
-  end
-  
   # Return the value of an attribute converted to a Date object. This returns
   # only the first element of the attribute value. It is
   # preferred not to use this method directly.
@@ -119,12 +107,6 @@ class Whois::Domain::Base
     attrs[attr_names[attr_name]] ? Date.parse(attrs[attr_names[attr_name]][0]) : nil
   end
   
-  %w{created_on updated_on expires_on}.each do |method_name|
-    define_method method_name do
-      attr_date(method_name.to_sym)
-    end
-  end
-
   # Return all values of an attribute as an Array. It is
   # preferred not to use this method directly.
   #
@@ -134,13 +116,47 @@ class Whois::Domain::Base
     attrs[attr_names[attr_name]] || []
   end
   
-  %w{status name_servers}.each do |method_name|
-    define_method method_name do
-      attr_array(method_name.to_sym)
-    end
+  private :attr_single, :attr_date, :attr_array
+  
+  # Return the whois_server used for getting details for this domain. For many
+  # TLD's, all data is served from the primary whois server. A few TLD's have
+  # details on separate servers. Return +host+ unless a whois_server is included
+  # in the whois data.
+  def whois_server
+    attr_single(:whois_server) || host
   end
   
-  # Array of name servers
+  # Name of this domain's Registrar
+  def registrar_name
+    attr_single(:registrar_name)
+  end
+  
+  # Date of domain registration
+  def created_on
+    attr_date(:created_on)
+  end
+  
+  # Last time the domain's whois information was updated (I think)
+  def updated_on
+    attr_date(:updated_on)
+  end
+  
+  # Date domain's registration expires
+  def expires_on
+    attr_date(:expires_on)
+  end
+  
+  # Array of status entries for domain
+  def status
+    attr_array(:status)
+  end
+  
+  # Array of name servers for domain
+  def name_servers
+    attr_array(:name_servers)
+  end
+  
+  # Alias for +name_servers+
   def ns
     name_servers
   end
