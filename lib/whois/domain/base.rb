@@ -43,11 +43,17 @@ class Whois::Domain::Base
     @attr_names ||= ATTR_NAMES.merge(self.class::ATTR_NAMES)
   end
   
+  # The string to use in +query+. This is generally just the domain name
+  # followed by a new line, but some servers have a different format.
+  def query_string
+    "#{@name}\n"
+  end
+  
   # Query the whois server and return all lines in +@raw+. Called by initialize.
   # Based on Michael Neumann's library.
   def query
     s = TCPsocket.open(host, 43)
-    s.write("#{@name}\n")
+    s.write(query_string)
     @raw = s.gets(nil)
     s.close
   end

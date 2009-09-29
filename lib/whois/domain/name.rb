@@ -17,12 +17,7 @@ class Whois::Domain::Name < Whois::Domain::Base
   
   # whois.nic.name uses a query in the format
   # object = name. e.g. domain = john.smith.name
-  def query
-    s = TCPsocket.open(host, 43)
-    s.write("domain = #{@name}\n")
-    ret = ""
-    while s.gets do ret += $_ end
-    s.close
-    @raw = ret
+  def query_string
+    "domain = #{@name}\n"
   end
 end
