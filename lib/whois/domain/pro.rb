@@ -10,10 +10,6 @@ class Whois::Domain::Pro < Whois::Domain::Base
     :expires_on => "Expiration Date"
   }
   
-  def database_updated_at
-    nil
-  end
-  
   def status
     attrs["Status"] ? attrs["Status"][0].split(",").collect{|d| d.strip} : nil
   end

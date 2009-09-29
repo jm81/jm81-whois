@@ -10,12 +10,6 @@ class Whois::Domain::Cat < Whois::Domain::Base
     :expires_on => "Expiration Date"
   }
   
-  # I couldn't find any database updated information for .org
-  def database_updated_at
-    nil
-  end
-  
-  # No whois server listed for .org domains, so always return the whois server used here.
   def whois_server
     HOST
   end

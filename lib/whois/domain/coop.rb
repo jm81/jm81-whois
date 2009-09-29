@@ -11,12 +11,7 @@ class Whois::Domain::Coop < Whois::Domain::Base
     :status => "Domain Status",
     :name_servers => "Host Name"
   }
-
-  def database_updated_at
-    nil
-  end
-
-  # No whois server listed for .biz domains, so always return the whois server used here.
+  
   def whois_server
     HOST
   end

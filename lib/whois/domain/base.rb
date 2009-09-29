@@ -147,6 +147,15 @@ class Whois::Domain::Base
     !available?
   end
   
+  # Some whois servers include the time of the last update to this domain in
+  # the database. For those that do not, this returns nil.
+  #
+  # ==== Returns
+  # Time:: Time of last database update, or nil.
+  def database_updated_at
+    nil
+  end
+  
   # A url for registering this domain.
   def register_url
     "https://www.securepaynet.net/gdshop/registrar/search.asp?prog_id=morgancr&domainToCheck=#{name}&checkAvail=1"

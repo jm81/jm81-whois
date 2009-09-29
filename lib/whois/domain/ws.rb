@@ -10,10 +10,6 @@ class Whois::Domain::Ws < Whois::Domain::Base
     :updated_on => "Domain last updated on"
   }
   
-  def database_updated_at
-    nil
-  end
-  
   def available?
     @raw =~ /^No match/
   end

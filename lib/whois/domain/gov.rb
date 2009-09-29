@@ -9,10 +9,6 @@ class Whois::Domain::Gov < Whois::Domain::Base
   ATTR_NAMES = {
   }
   
-  def database_updated_at
-    nil
-  end
-  
   def whois_server
     HOST
   end

@@ -11,10 +11,6 @@ class Whois::Domain::Name < Whois::Domain::Base
     :status => "Domain Status"
   }
   
-  def database_updated_at
-    nil
-  end
-  
   def whois_server
     HOST
   end

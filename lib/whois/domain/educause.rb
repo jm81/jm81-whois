@@ -9,10 +9,6 @@ class Whois::Domain::Educause < Whois::Domain::Base
     :expires_on => "Domain expires"
   }
   
-  def database_updated_at
-    nil
-  end
-  
   def whois_server
     HOST
   end
