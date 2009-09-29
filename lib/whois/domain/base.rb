@@ -67,26 +67,20 @@ class Whois::Domain::Base
   def attrs
     return @attrs if @attrs
     
-    actual_object = {}
-    raw.each do |i|
-      if i =~ self.class::ATTR_MATCH
-        if actual_object.has_key? $1 then
-          actual_object[$1] << $2
-        else
-          actual_object[$1] = [$2]
-        end
-      end
+    @attrs = Hash.new { |hsh, key| hsh[key] = [] }
+    raw.each do |line|
+      m = self.class::ATTR_MATCH.match(line)
+      @attrs[m[1]] << m[2] if m
     end
-    @attrs = actual_object
+    return @attrs
   end
   
   # Return attributes as newline separated key value pairs ("key: value")
   def to_s
     s = ""
-    raw.each do |i|
-      if i =~ self.class::ATTR_MATCH
-        s << "#{$1}: #{$2}\n"
-      end
+    raw.each do |line|
+      m = self.class::ATTR_MATCH.match(line)
+      s << "#{m[1]}: #{m[2]}\n" if m
     end
     s
   end
