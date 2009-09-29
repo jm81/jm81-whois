@@ -48,10 +48,8 @@ class Whois::Domain::Base
   def query
     s = TCPsocket.open(host, 43)
     s.write("#{@name}\n")
-    ret = ""
-    while s.gets do ret += $_ end
+    @raw = s.gets(nil)
     s.close
-    @raw = ret
   end
   
   # Get Hash of attributes, by iterating through each line of +@raw+. If the
