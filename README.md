@@ -20,6 +20,10 @@ through a standardized API (see example below).
 
     domain.raw # Raw whois information
 
+    domain.to_s # Key value pairs of anything that looks like an attribute.
+                # Especially useful for non-API information, such as registrant
+                # data.
+    
 ##Code layout
 
 Since pretty much every TLD has a different whois format, the various classes
@@ -47,8 +51,8 @@ Tests are against actual whois data and thus are somewhat brittle, especially
 
 ##TODO
 
-Whois information for:
-- Registrars
-- Nameservers
-
-Additional TLD's
+- Whois information for:
+  - Registrars
+  - Nameservers
+- Additional TLD's
+- Standardized access of registrant data
