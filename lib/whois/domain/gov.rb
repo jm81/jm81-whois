@@ -9,10 +9,6 @@ class Whois::Domain::Gov < Whois::Domain::Base
   ATTR_NAMES = {
   }
   
-  def whois_server
-    HOST
-  end
-  
   def available?
     @raw !~ /Domain Name:/
   end

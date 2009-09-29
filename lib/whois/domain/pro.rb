@@ -14,10 +14,6 @@ class Whois::Domain::Pro < Whois::Domain::Base
     attrs["Status"] ? attrs["Status"][0].split(",").collect{|d| d.strip} : nil
   end
   
-  def whois_server
-    HOST
-  end
-  
   def register_url
     "http://www.registrypro.pro/partners_findaregistrar.htm"
   end

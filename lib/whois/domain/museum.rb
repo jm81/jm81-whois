@@ -10,10 +10,6 @@ class Whois::Domain::Museum < Whois::Domain::Base
     :expires_on => "Expiration Date"
   }
   
-  def whois_server
-    HOST
-  end
-  
   def available?
     @raw =~ /NOT FOUND/
   end

@@ -23,10 +23,6 @@ class Whois::Domain::Neustar < Whois::Domain::Base
       Time.parse($1)
     end
   end
-
-  def whois_server
-    host
-  end
   
   def available?
     @raw =~ /Not found:/

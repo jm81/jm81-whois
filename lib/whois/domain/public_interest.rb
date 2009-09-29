@@ -9,10 +9,6 @@ class Whois::Domain::PublicInterest < Whois::Domain::Base
     :updated_on => "Last Updated On"
   }
   
-  def whois_server
-    HOST
-  end
-  
   def available?
     @raw =~ /NOT FOUND/
   end

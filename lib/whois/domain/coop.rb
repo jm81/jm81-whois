@@ -12,10 +12,6 @@ class Whois::Domain::Coop < Whois::Domain::Base
     :name_servers => "Host Name"
   }
   
-  def whois_server
-    HOST
-  end
-  
   def available?
     @raw =~ /may be available for purchase/
   end

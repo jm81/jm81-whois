@@ -9,10 +9,6 @@ class Whois::Domain::Educause < Whois::Domain::Base
     :expires_on => "Domain expires"
   }
   
-  def whois_server
-    HOST
-  end
-  
   # Educause is the only registrar for .edu
   def registrar_name
     "Educause"

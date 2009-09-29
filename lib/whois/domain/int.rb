@@ -10,10 +10,6 @@ class Whois::Domain::Int < Whois::Domain::Base
     :name_servers => "Nameserver"
   }
   
-  def whois_server
-    HOST
-  end
-  
   def registrar_name
     ".int Domain Registry (IANA)"
   end

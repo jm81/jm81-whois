@@ -11,10 +11,6 @@ class Whois::Domain::Name < Whois::Domain::Base
     :status => "Domain Status"
   }
   
-  def whois_server
-    HOST
-  end
-  
   def available?
     @raw =~ /No match/
   end

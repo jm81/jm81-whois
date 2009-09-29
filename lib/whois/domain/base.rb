@@ -95,7 +95,15 @@ class Whois::Domain::Base
     attrs[attr_names[attr_name]] ? attrs[attr_names[attr_name]][0] : nil
   end
   
-  %w{registrar_name whois_server}.each do |method_name|
+  # Return the whois_server used for getting details for this domain. For many
+  # TLD's, all data is served from the primary whois server. A few TLD's have
+  # details on separate servers. Return +host+ unless a whois_server is included
+  # in the whois data.
+  def whois_server
+    attr_single(:whois_server) || host
+  end
+  
+  %w{registrar_name}.each do |method_name|
     define_method method_name do
       attr_single(method_name.to_sym)
     end
