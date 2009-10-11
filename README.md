@@ -3,6 +3,10 @@
 This library presents whois information for domains in a variety of TLD's
 through a standardized API (see example below).
 
+##Installation
+
+sudo gem install jm81-whois
+
 ##Example
 
     domain.name         #=> "example.com"

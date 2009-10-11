@@ -6,14 +6,18 @@ require 'rubygems'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "ruby-whois"
+    gem.name = "jm81-whois"
     gem.summary = %Q{Ruby library for accessing Whois information}
+    gem.description = <<EOF
+This library presents whois information for domains in a variety of TLD's 
+through a standardized API.
+EOF
     gem.email = "jmorgan@morgancreative.net"
-    gem.homepage = "http://github.com/jm81/ruby-whois"
+    gem.homepage = "http://github.com/jm81/whois"
     gem.authors = ["Jared Morgan"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
-
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
