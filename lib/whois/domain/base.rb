@@ -10,7 +10,9 @@ class Whois::Domain::Base
     :expires_on => "Expiration Date",
     :status => "Status",
     :name_servers => "Name Server",
-    :whois_server => "Whois Server"
+    :whois_server => "Whois Server",
+    :registrant_id => "Registrant",
+    :administrative_id => "Administrative"
   }
   
   # Inherited classes call class method +responds_to+ to say for which TLDs
@@ -156,6 +158,16 @@ class Whois::Domain::Base
     attr_array(:name_servers)
   end
   
+  # ID of this domain's Registrant
+  def registrant_id
+    attr_single(:registrant_id)
+  end
+
+  # ID of this domain's Admin contact
+  def administrative_id
+    attr_single(:administrative_id)
+  end
+
   # Alias for +name_servers+
   def ns
     name_servers

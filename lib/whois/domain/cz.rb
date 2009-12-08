@@ -10,7 +10,7 @@ class Whois::Domain::Cz < Whois::Domain::Base
     :name_servers => "nserver",
     :expires_on => "expire",
     :status => "status",
-    :registrant_name => "registrant"
+    :registrant_id => "contact"
   }
 
   def query_string
