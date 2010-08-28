@@ -9,9 +9,14 @@ class Whois::Domain::VerisignGrs < Whois::Domain::Base
 
     query
 
-    unless ( whois_server.empty? || whois_server == HOST )
+    # Requery if the whois_server is different from HOST (or whois.iana.org
+    # which doesn't appear to return much data). Check that the whois_server
+    # does in fact return data before using.
+    unless ( whois_server.empty? || [HOST, 'whois.iana.org'].include?(whois_server) )
       @host = whois_server
+      old_raw = @raw
       query
+      @raw = old_raw if (@raw =~ /not available/)
     end
   end
   
@@ -24,11 +29,20 @@ class Whois::Domain::VerisignGrs < Whois::Domain::Base
       else             "whois.verisign-grs.com"
     end
   end
+
+  DATABASE_UPDATED_AT_REGEXES = [
+    /Last update of whois database: ([^<]*)/,
+    /Record last updated on ([^\.]*)/
+  ]
   
   def database_updated_at
-    if(@raw =~ /Last update of whois database: ([^<]*)/)
-      Time.parse($1)
+    DATABASE_UPDATED_AT_REGEXES.each do |regex|
+      if (match_data = @raw.match(regex))
+        return Time.parse(match_data[1])
+      end
     end
+    
+    return nil
   end
   
   def available?

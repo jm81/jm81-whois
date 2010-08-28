@@ -68,7 +68,7 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :expires_on => "2038-01-18",
     :registrar_name => "TUCOWS INC.",
     :whois_server => "whois.tucows.com",
-    :raw_match => "Domain Name: WWW.TV",
+    :raw_match => "Domain name: WWW.TV",
     :status => ["CLIENT-XFER-PROHIBITED", "CLIENT-UPDATE-PROHIBITED"],
     :name_servers => ['A4.NSTLD.COM', 'F4.NSTLD.COM', 'G4.NSTLD.COM', 'L4.NSTLD.COM']
   }
