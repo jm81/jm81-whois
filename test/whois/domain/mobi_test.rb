@@ -10,9 +10,9 @@ class Whois::Domain::MobiTest < Test::Unit::TestCase
   EXP_DATA = {
     :name => "mtld.mobi",
     :kind => "Mobi",
-    :created_on => "2006-05-11",
-    :updated_on => "2008-12-04",
-    :expires_on => "2010-05-11",
+    :created_on => '2006-05-11',
+    :updated_on => '2010-04-09',
+    :expires_on => '2012-05-11',
     :database_updated_at => false,
     :registrar_name => "MarkMonitor Inc (292)",
     :whois_server => "whois.dotmobiregistry.net",

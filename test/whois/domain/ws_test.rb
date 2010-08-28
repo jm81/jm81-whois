@@ -8,11 +8,11 @@ class Whois::Domain::WsTest < Test::Unit::TestCase
   end
 
   EXP_WS = {
-    :name => "example.ws",
-    :kind => "Ws",
-    :created_on => "2003-07-13",
-    :updated_on => "2009-07-03",
-    :expires_on => "2010-07-13",
+    :name => 'example.ws',
+    :kind => 'Ws',
+    :created_on => '2003-07-13',
+    :updated_on => '2010-07-08',
+    :expires_on => '2011-07-13',
     :database_updated_at => false,
     :registrar_name => "GoDaddy.com",
     :whois_server => "whois.godaddy.com",

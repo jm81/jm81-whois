@@ -20,9 +20,9 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
   EXP_BIZ = {
     :name => "neulevel.biz",
     :kind => "Neustar",
-    :created_on => "2001-11-07",
-    :updated_on => "2008-12-22",
-    :expires_on => "2009-11-06",
+    :created_on => '2001-11-07',
+    :updated_on => '2010-07-16',
+    :expires_on => '2010-11-06',
     :registrar_name => "REGISTRY REGISTRAR",
     :whois_server => "whois.biz",
     :raw_match => "Domain Name:                                 NEULEVEL.BIZ",
@@ -33,9 +33,9 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
   EXP_US = {
     :name => "neustar.us",
     :kind => "Neustar",
-    :created_on => "2002-04-18",
-    :updated_on => "2009-06-02",
-    :expires_on => "2010-04-17",
+    :created_on => '2002-04-18',
+    :updated_on => '2010-06-02',
+    :expires_on => '2011-04-17',
     :registrar_name => "REGISTRY REGISTRAR",
     :whois_server => "whois.nic.us",
     :raw_match => "Domain Name:                                 NEUSTAR.US",
@@ -61,6 +61,7 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
 Domain Name: NEULEVEL.BIZ
 Domain ID: D592-BIZ
 Sponsoring Registrar: REGISTRY REGISTRAR
+Registrar URL (registration services): WWW.NEULEVEL.BIZ
 Domain Status: clientDeleteProhibited
 Domain Status: clientTransferProhibited
 Domain Status: clientUpdateProhibited
@@ -126,9 +127,9 @@ Name Server: PDNS4.ULTRADNS.ORG
 Name Server: PDNS5.ULTRADNS.INFO
 Name Server: PDNS6.ULTRADNS.CO.UK
 Created by Registrar: REGISTRY REGISTRAR
-Last Updated by Registrar: BATCHCSR
+Last Updated by Registrar: NEULEVELCSR
 Domain Registration Date: Wed Nov 07 00:01:00 GMT 2001
-Domain Expiration Date: Fri Nov 06 23:59:00 GMT 2009
-Domain Last Updated Date: Mon Dec 22 01:40:11 GMT 2008
+Domain Expiration Date: Sat Nov 06 23:59:00 GMT 2010
+Domain Last Updated Date: Fri Jul 16 22:16:57 GMT 2010
 EOF
 end

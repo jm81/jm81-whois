@@ -12,11 +12,11 @@ class Whois::Domain::CatTest < Test::Unit::TestCase
   end
 
   EXP_DATA = {
-    :name => "domini.cat",
-    :kind => "Cat",
-    :created_on => "2006-05-05",
-    :updated_on => "2009-06-19",
-    :expires_on => "2010-05-05",
+    :name => 'domini.cat',
+    :kind => 'Cat',
+    :created_on => '2006-05-05',
+    :updated_on => '2010-06-19',
+    :expires_on => '2011-05-05',
     :database_updated_at => false,
     :registrar_name => "R-906 (puntCAT Administrative Account)",
     :whois_server => "whois.cat",

@@ -8,11 +8,11 @@ class Whois::Domain::AeroTest < Test::Unit::TestCase
   end
 
   EXP_DATA = {
-    :name => "information.aero",
-    :kind => "Aero",
-    :created_on => "2002-02-19",
-    :updated_on => "2009-02-20",
-    :expires_on => "2010-02-19",
+    :name => 'information.aero',
+    :kind => 'Aero',
+    :created_on => '2002-02-19',
+    :updated_on => '2010-02-20',
+    :expires_on => '2011-02-19',
     :database_updated_at => false,
     :registrar_name => "SITA (9999)",
     :whois_server => "whois.aero",

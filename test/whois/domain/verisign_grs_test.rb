@@ -50,11 +50,11 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
   EXP_JOBS = {
     :name => "goto.jobs",
     :kind => "VerisignGrs",
-    :created_on => "2006-02-21",
-    :updated_on => "2009-02-20",
-    :expires_on => "2010-02-21",
-    :registrar_name => "ENCIRCA, INC",
-    :whois_server => "whois.encirca.com",
+    :created_on => "2010-02-04",
+    :updated_on => "2010-02-04",
+    :expires_on => "2011-02-04",
+    :registrar_name => "NAME SHARE, INC",
+    :whois_server => "whois.nameshare.com",
     :raw_match => "Domain Name: GOTO.JOBS",
     :status => ['ACTIVE'],
     :name_servers => ['NS2.REGISTRY.JOBS', 'NS1.REGISTRY.JOBS']

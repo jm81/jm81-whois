@@ -10,9 +10,9 @@ class Whois::Domain::PublicInterestTest < Test::Unit::TestCase
   EXP_DATA = {
     :name => "example.org",
     :kind => "PublicInterest",
-    :created_on => "1995-08-31",
-    :updated_on => "2004-02-18",
-    :expires_on => "2010-08-30",
+    :created_on => '1995-08-31',
+    :updated_on => '2010-07-27',
+    :expires_on => '2010-08-30',
     :database_updated_at => false,
     :registrar_name => "Internet Assigned Numbers Authority (IANA) (R193-LROR)",
     :whois_server => "whois.pir.org",
@@ -25,7 +25,7 @@ class Whois::Domain::PublicInterestTest < Test::Unit::TestCase
 Domain ID: D2328855-LROR
 Domain Name: EXAMPLE.ORG
 Created On: 31-Aug-1995 04:00:00 UTC
-Last Updated On: 18-Feb-2004 03:48:47 UTC
+Last Updated On: 27-Jul-2010 20:57:51 UTC
 Expiration Date: 30-Aug-2010 04:00:00 UTC
 Sponsoring Registrar: Internet Assigned Numbers Authority (IANA) (R193-LROR)
 Status: DELETE PROHIBITED
@@ -70,6 +70,19 @@ Tech FAX: +1.3108238649
 Tech Email: res-dom@iana.org
 Name Server: A.IANA-SERVERS.NET
 Name Server: B.IANA-SERVERS.NET
+DNSSEC: Signed
+DS Created 1: 27-Jul-2010 20:57:22 UTC
+DS Maximum Signature Life 1: 3456000 seconds
+DS Key Tag 1: 31589
+Algorithm 1: 8
+Digest Type 1: 1
+Digest 1: 7b8370002875dda781390a8e586c31493847d9bc
+DS Created 2: 27-Jul-2010 20:57:36 UTC
+DS Maximum Signature Life 2: 3456000 seconds
+DS Key Tag 2: 31589
+Algorithm 2: 8
+Digest Type 2: 2
+Digest 2: 3fdc4c11fa3ad3535ea8c1ce3eaf7bfa5ca9ae8a834d98fee10085cfaeb625aa
 EOF
 
 end
