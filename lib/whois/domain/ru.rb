@@ -1,4 +1,4 @@
-﻿class Whois::Domain::Ru < Whois::Domain::Base
+class Whois::Domain::Ru < Whois::Domain::Base
   HOST = "whois.ripn.net"
   ATTR_MATCH = /\s*([^:]+):\s+(.*)$/
   responds_to :ru
