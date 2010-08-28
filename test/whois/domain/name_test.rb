@@ -8,11 +8,11 @@ class Whois::Domain::NameTest < Test::Unit::TestCase
   end
 
   EXP_DATA = {
-    :name => "joe.smith.name",
-    :kind => "Name",
-    :created_on => "2007-08-08",
-    :updated_on => "2009-08-20",
-    :expires_on => "2011-08-08",
+    :name => 'joe.smith.name',
+    :kind => 'Name',
+    :created_on => '2007-08-08',
+    :updated_on => '2009-12-19',
+    :expires_on => '2011-08-08',
     :database_updated_at => false,
     :registrar_name => "Tucows Inc.",
     :whois_server => "whois.nic.name",

@@ -1,6 +1,6 @@
 class Whois::Domain::Name < Whois::Domain::Base
   HOST = "whois.nic.name"
-  ATTR_MATCH = /^([^:]+):\s(.*)\r$/
+  ATTR_MATCH = /^([^:]+):\s(.*)$/
   responds_to :name
 
   ATTR_NAMES = {
