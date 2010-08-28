@@ -13,7 +13,7 @@ class Whois::Domain::Coop < Whois::Domain::Base
   }
   
   def available?
-    @raw =~ /may be available for purchase/
+    @raw =~ /No domain records were found to match/
   end
   
   def register_url
