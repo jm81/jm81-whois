@@ -2,11 +2,13 @@ require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
 require 'rubygems'
+require File.join(File.dirname(__FILE__), 'lib', 'whois', 'version')
 
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "jm81-whois"
+    gem.version = Whois::VERSION.dup
     gem.summary = %Q{Ruby library for accessing Whois information}
     gem.description = <<EOF
 This library presents whois information for domains in a variety of TLD's 
