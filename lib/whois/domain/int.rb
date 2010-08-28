@@ -1,13 +1,12 @@
 class Whois::Domain::Int < Whois::Domain::Base
   HOST = "whois.iana.org"
-  ATTR_MATCH = /^\s{0,4}([^:]+):\s+(\S.*)\r$/
+  ATTR_MATCH = /^([^:]+):\s+(\S.*)$/
   responds_to :int
 
   ATTR_NAMES = {
-    :registrar_name => "Sponsoring Registrar",
-    :created_on => "Registration Date",
-    :updated_on => "Last Updated Date",
-    :name_servers => "Nameserver"
+    :created_on => 'created',
+    :updated_on => 'changed',
+    :name_servers => 'nserver'
   }
   
   def registrar_name
@@ -15,19 +14,11 @@ class Whois::Domain::Int < Whois::Domain::Base
   end
   
   def available?
-    @raw =~ /not found/
-  end
-  
-  def created_on
-    Date.parse(attrs["Registration Date"][-1])
-  end
-
-  def updated_on
-    Date.parse(attrs["Last Updated Date"][-1])
+     @raw =~ /domain:       INT/
   end
   
   def name_servers
-    # Remove trailing dot.
-    super.collect{ |ns| ns[0..-2] }
+    # Remove IP address.
+    super.collect{ |ns| ns.match(/\A([\S]*)\s/)[1] }
   end
 end
