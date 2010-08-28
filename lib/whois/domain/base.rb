@@ -57,8 +57,16 @@ class Whois::Domain::Base
     s = TCPsocket.open(host, 43)
     s.write(query_string)
     @raw = s.gets(nil)
+    raise(Whois::LookupRestricted, @raw) if lookup_restricted?
     s.close
   end
+
+  # Check whether this server is restricting lookups (probably due to exceeding
+  # the maximum allowed lookups. The Base method always returns false, since
+  # checking for this is server-specific.
+  def lookup_restricted?
+    false
+  end  
   
   private :attr_names, :query_string, :query
   

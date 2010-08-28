@@ -14,6 +14,10 @@ class Whois::Domain::Ws < Whois::Domain::Base
   def available?
     @raw =~ /^No match/
   end
+
+  def lookup_restricted?
+    @raw =~ /You exceeded the maximum allowable number of whois lookups/
+  end
   
   def name_servers
     found = false
