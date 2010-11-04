@@ -38,12 +38,12 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "example.net",
     :kind => "VerisignGrs",
     :created_on => "1995-08-31",
-    :updated_on => "2004-03-26",
+    :updated_on => "2010-08-31",
     :expires_on => "2010-08-30",
     :registrar_name => "RESERVED-INTERNET ASSIGNED NUMBERS AUTHORITY",
     :whois_server => "whois.iana.org",
     :raw_match => "Domain Name: EXAMPLE.NET",
-    :status => ['clientDeleteProhibited', 'clientTransferProhibited', 'clientUpdateProhibited'],
+    :status => ['Account Suspended', 'clientDeleteProhibited', 'clientTransferProhibited', 'clientUpdateProhibited'],
     :name_servers => ['A.IANA-SERVERS.NET', 'B.IANA-SERVERS.NET']
   }
   
@@ -64,13 +64,13 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "www.tv",
     :kind => "VerisignGrs",
     :created_on => "2000-05-01",
-    :updated_on => "2009-01-08",
+    :updated_on => "2010-10-05",
     :expires_on => "2038-01-18",
     :registrar_name => "TUCOWS INC.",
     :whois_server => "whois.tucows.com",
     :raw_match => "Domain name: WWW.TV",
     :status => ["CLIENT-XFER-PROHIBITED", "CLIENT-UPDATE-PROHIBITED"],
-    :name_servers => ['A4.NSTLD.COM', 'F4.NSTLD.COM', 'G4.NSTLD.COM', 'L4.NSTLD.COM']
+    :name_servers => ['A4.NSTLD.COM', 'F4.NSTLD.COM', 'G4.NSTLD.COM', 'H4.NSTLD.COM', 'J4.NSTLD.COM', 'L4.NSTLD.COM', 'K4.NSTLD.COM']
   }
   
   EXP_COM_TO_S = <<EOF

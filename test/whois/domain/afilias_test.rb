@@ -11,14 +11,14 @@ class Whois::Domain::AfiliasTest < Test::Unit::TestCase
     :name => "nic.info",
     :kind => "Afilias",
     :created_on => "2001-07-27",
-    :updated_on => "2002-06-10",
+    :updated_on => "2010-10-26",
     :expires_on => "2011-07-27",
     :database_updated_at => false,
     :registrar_name => "Afilias Ltd. (R145-LRMS)",
     :whois_server => "whois.afilias.net",
     :raw_match => "Domain Name:NIC.INFO",
     :status => ['DELETE PROHIBITED', 'RENEW PROHIBITED', 'TRANSFER PROHIBITED', 'UPDATE PROHIBITED'],
-    :name_servers => ['NS01.AFILIAS.INFO', 'NS02.AFILIAS.INFO']
+    :name_servers => ['NS1.AMS1.AFILIAS-NST.INFO', 'NS1.MIA1.AFILIAS-NST.INFO', 'NS1.SEA1.AFILIAS-NST.INFO', 'NS1.YYZ1.AFILIAS-NST.INFO', 'NS1.HKG1.AFILIAS-NST.INFO']
   }
 
 end

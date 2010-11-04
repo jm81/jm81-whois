@@ -11,7 +11,7 @@ class Whois::Domain::WsTest < Test::Unit::TestCase
     :name => 'example.ws',
     :kind => 'Ws',
     :created_on => '2003-07-13',
-    :updated_on => '2010-07-08',
+    :updated_on => '2010-10-04',
     :expires_on => '2011-07-13',
     :database_updated_at => false,
     :registrar_name => "GoDaddy.com",

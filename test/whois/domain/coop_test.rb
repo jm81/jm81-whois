@@ -15,13 +15,13 @@ class Whois::Domain::CoopTest < Test::Unit::TestCase
     :name => "domains.coop",
     :kind => "Coop",
     :created_on => "2002-07-09",
-    :updated_on => "2007-01-17",
+    :updated_on => "2010-09-03",
     :expires_on => "2011-07-09",
     :database_updated_at => false,
     :registrar_name => "domains.coop",
     :whois_server => "whois.nic.coop",
     :raw_match => "Domain Name:             domains.coop",
-    :status => ['ok'],
+    :status => ['clientTransferProhibited'],
     :name_servers => ['ns2.mydyndns.org', 'ns3.mydyndns.org', 'ns4.mydyndns.org', 'ns5.mydyndns.org', 'ns1.mydyndns.org']
   }
   
