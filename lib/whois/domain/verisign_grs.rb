@@ -30,6 +30,14 @@ class Whois::Domain::VerisignGrs < Whois::Domain::Base
     end
   end
 
+  def query_string
+    if host == "whois.verisign-grs.com"
+      "domain #{@name.upcase}\n"
+    else
+      "#{@name.upcase}\n"
+    end
+  end
+
   DATABASE_UPDATED_AT_REGEXES = [
     /Last update of whois database: ([^<]*)/,
     /Record last updated on ([^\.]*)/

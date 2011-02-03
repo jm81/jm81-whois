@@ -38,12 +38,12 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "example.net",
     :kind => "VerisignGrs",
     :created_on => "1995-08-31",
-    :updated_on => "2010-08-31",
-    :expires_on => "2010-08-30",
+    :updated_on => "2010-12-29",
+    :expires_on => "2011-08-30",
     :registrar_name => "RESERVED-INTERNET ASSIGNED NUMBERS AUTHORITY",
     :whois_server => "whois.iana.org",
     :raw_match => "Domain Name: EXAMPLE.NET",
-    :status => ['Account Suspended', 'clientDeleteProhibited', 'clientTransferProhibited', 'clientUpdateProhibited'],
+    :status => ['clientDeleteProhibited', 'clientTransferProhibited', 'clientUpdateProhibited'],
     :name_servers => ['A.IANA-SERVERS.NET', 'B.IANA-SERVERS.NET']
   }
   
