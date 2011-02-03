@@ -3,7 +3,7 @@
 # with more detail.
 class Whois::Domain::Gov < Whois::Domain::Base
   HOST = "whois.nic.gov"
-  ATTR_MATCH = /^([^:]+):\s(.*)\r$/
+  ATTR_MATCH = /^\s*([^:]+):\s(.*)$/
   responds_to :gov
 
   ATTR_NAMES = {

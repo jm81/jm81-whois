@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Whois::Domain::GovTest < Test::Unit::TestCase
 
-  def test_whois  
+  def test_whois
     assert_whois_data(EXP_DATA)
     assert Whois::Domain.new("not-reg-1234.gov").available?
   end
@@ -20,8 +20,8 @@ class Whois::Domain::GovTest < Test::Unit::TestCase
     :database_updated_at => false,
     :registrar_name => nil,
     :whois_server => "whois.nic.gov",
-    :raw_match => "Domain Name: dotgov.gov",
-    :status => ['Active'],
+    :raw_match => "Domain Name: DOTGOV.GOV",
+    :status => ['ACTIVE'],
     :name_servers => []
   }
 
