@@ -21,8 +21,8 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     :name => "neulevel.biz",
     :kind => "Neustar",
     :created_on => '2001-11-07',
-    :updated_on => '2010-07-16',
-    :expires_on => '2010-11-06',
+    :updated_on => '2010-12-22',
+    :expires_on => '2011-11-06',
     :registrar_name => "REGISTRY REGISTRAR",
     :whois_server => "whois.biz",
     :raw_match => "Domain Name:                                 NEULEVEL.BIZ",
@@ -47,14 +47,14 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     :name => "travel.travel",
     :kind => "Neustar",
     :created_on => "2005-10-04",
-    :updated_on => "2006-07-23",
-    :expires_on => "2010-10-03",
+    :updated_on => "2010-11-22",
+    :expires_on => "2021-10-03",
     :database_updated_at => true,
     :registrar_name => "NEUSTAR GATEWAY",
     :whois_server => "whois.nic.travel",
     :raw_match => "Domain Name:                                 TRAVEL.TRAVEL",
     :status => ['ok'],
-    :name_servers => ['NETSYS.COM', 'NS01-MIA.THEGLOBE.COM']
+    :name_servers => ['NS01-MIA.THEGLOBE.COM', 'NETSYS.COM']
   }
   
   EXP_TO_S = <<EOF
@@ -127,9 +127,9 @@ Name Server: PDNS4.ULTRADNS.ORG
 Name Server: PDNS5.ULTRADNS.INFO
 Name Server: PDNS6.ULTRADNS.CO.UK
 Created by Registrar: REGISTRY REGISTRAR
-Last Updated by Registrar: NEULEVELCSR
+Last Updated by Registrar: BATCHCSR
 Domain Registration Date: Wed Nov 07 00:01:00 GMT 2001
-Domain Expiration Date: Sat Nov 06 23:59:00 GMT 2010
-Domain Last Updated Date: Fri Jul 16 22:16:57 GMT 2010
+Domain Expiration Date: Sun Nov 06 23:59:00 GMT 2011
+Domain Last Updated Date: Wed Dec 22 01:40:59 GMT 2010
 EOF
 end

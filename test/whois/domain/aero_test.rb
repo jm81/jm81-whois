@@ -11,14 +11,18 @@ class Whois::Domain::AeroTest < Test::Unit::TestCase
     :name => 'information.aero',
     :kind => 'Aero',
     :created_on => '2002-02-19',
-    :updated_on => '2010-02-20',
+    :updated_on => '2010-11-17',
     :expires_on => '2011-02-19',
     :database_updated_at => false,
     :registrar_name => "SITA (9999)",
     :whois_server => "whois.aero",
     :raw_match => "Domain Name:INFORMATION.AERO",
     :status => ['OK'],
-    :name_servers => ['NS01.AFILIAS.INFO', 'NS02.AFILIAS.INFO']
+    :name_servers => ["NS1.AMS1.AFILIAS-NST.INFO",
+      "NS1.HKG1.AFILIAS-NST.INFO",
+      "NS1.MIA1.AFILIAS-NST.INFO",
+      "NS1.SEA1.AFILIAS-NST.INFO",
+      "NS1.YYZ1.AFILIAS-NST.INFO"]
   }
 
 end

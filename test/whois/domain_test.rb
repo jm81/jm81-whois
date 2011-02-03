@@ -5,7 +5,7 @@ class Whois::Domain::BaseTest < Test::Unit::TestCase
 
   def test_expired
     assert !Whois::Domain.new("example.com").expired?
-    assert !Whois::Domain.new("example.org").expired?
+    assert !Whois::Domain.new("example.net").expired?
   end
   
   def test_register_url
