@@ -11,7 +11,7 @@ class Whois::Domain::EducauseTest < Test::Unit::TestCase
     :name => 'educause.edu',
     :kind => 'Educause',
     :created_on => '1998-03-11',
-    :updated_on => '2010-10-01',
+    :updated_on => '2011-03-22',
     :expires_on => '2011-07-31',
     :database_updated_at => false,
     :registrar_name => 'Educause',

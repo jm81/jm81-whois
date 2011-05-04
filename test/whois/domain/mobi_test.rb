@@ -11,14 +11,14 @@ class Whois::Domain::MobiTest < Test::Unit::TestCase
     :name => "mtld.mobi",
     :kind => "Mobi",
     :created_on => '2006-05-11',
-    :updated_on => '2010-04-09',
+    :updated_on => '2011-02-08',
     :expires_on => '2012-05-11',
     :database_updated_at => false,
     :registrar_name => "MarkMonitor Inc (292)",
     :whois_server => "whois.dotmobiregistry.net",
     :raw_match => "Domain Name:MTLD.MOBI",
     :status => ['CLIENT DELETE PROHIBITED', 'CLIENT TRANSFER PROHIBITED', 'CLIENT UPDATE PROHIBITED'],
-    :name_servers => ['NS7.ZONEEDIT.COM', 'NS3.ZONEEDIT.COM']
+    :name_servers => ['E.SERVICE.AFILIASDNS.INFO', 'A.SERVICE.AFILIASDNS.INFO', 'F.SERVICE.AFILIASDNS.NET', 'D.SERVICE.AFILIASDNS.COM', 'C.SERVICE.AFILIASDNS.NET', 'B.SERVICE.AFILIASDNS.ORG']
   }
 
 end

@@ -10,7 +10,7 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     assert_whois_data(EXP_NET)
     assert Whois::Domain.new("not-reg-1234.net").available?
   end
-  
+
   def test_jobs
     assert_whois_data(EXP_JOBS)
     assert Whois::Domain.new("not-reg-1234.jobs").available?
@@ -25,7 +25,7 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "example.com",
     :kind => "VerisignGrs",
     :created_on => "1995-08-14",
-    :updated_on => "2004-03-26",
+    :updated_on => "2011-04-19",
     :expires_on => "2011-08-13",
     :registrar_name => "RESERVED-INTERNET ASSIGNED NUMBERS AUTHORITY",
     :whois_server => "whois.iana.org",
@@ -38,7 +38,7 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "example.net",
     :kind => "VerisignGrs",
     :created_on => "1995-08-31",
-    :updated_on => "2010-12-29",
+    :updated_on => "2011-04-19",
     :expires_on => "2011-08-30",
     :registrar_name => "RESERVED-INTERNET ASSIGNED NUMBERS AUTHORITY",
     :whois_server => "whois.iana.org",
@@ -52,7 +52,7 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :kind => "VerisignGrs",
     :created_on => "2010-02-04",
     :updated_on => "2010-02-04",
-    :expires_on => "2011-02-04",
+    :expires_on => "2012-02-04",
     :registrar_name => "NAME SHARE, INC",
     :whois_server => "whois.nameshare.com",
     :raw_match => "Domain Name: GOTO.JOBS",
@@ -83,7 +83,7 @@ Name Server: B.IANA-SERVERS.NET
 Status: clientDeleteProhibited
 Status: clientTransferProhibited
 Status: clientUpdateProhibited
-Updated Date: 26-mar-2004
+Updated Date: 19-apr-2011
 Creation Date: 14-aug-1995
 Expiration Date: 13-aug-2011
 EOF

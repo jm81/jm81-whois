@@ -11,14 +11,14 @@ class Whois::Domain::WsTest < Test::Unit::TestCase
     :name => 'example.ws',
     :kind => 'Ws',
     :created_on => '2003-07-13',
-    :updated_on => '2010-10-04',
+    :updated_on => '2011-04-29',
     :expires_on => '2011-07-13',
     :database_updated_at => false,
     :registrar_name => "GoDaddy.com",
     :whois_server => "whois.godaddy.com",
     :raw_match => "Domain Name: EXAMPLE.WS",
     :status => [],
-    :name_servers => ['ns1.activeaudience.com', 'ns2.activeaudience.com']
+    :name_servers => ['ns1.sedoparking.com', 'ns2.sedoparking.com']
   }
 
 end

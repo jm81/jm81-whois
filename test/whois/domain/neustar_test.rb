@@ -61,7 +61,7 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
 Domain Name: NEULEVEL.BIZ
 Domain ID: D592-BIZ
 Sponsoring Registrar: REGISTRY REGISTRAR
-Registrar URL (registration services): WWW.NEULEVEL.BIZ
+Registrar URL (registration services): WWW.NEUSTARREGISTRY.BIZ
 Domain Status: clientDeleteProhibited
 Domain Status: clientTransferProhibited
 Domain Status: clientUpdateProhibited
