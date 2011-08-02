@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Whois::Domain::NameTest < Test::Unit::TestCase
 
-  def test_whois  
+  def test_whois
     assert_whois_data(EXP_DATA)
     assert Whois::Domain.new("notreg123.smith.name").available?
   end
@@ -14,7 +14,7 @@ class Whois::Domain::NameTest < Test::Unit::TestCase
     :updated_on => '2009-12-19',
     :expires_on => '2011-08-08',
     :database_updated_at => false,
-    :registrar_name => "Tucows Inc.",
+    :registrar_name => "Tucows.com Co.",
     :whois_server => "whois.nic.name",
     :raw_match => "Domain Name: JOE.SMITH.NAME",
     :status => ["clientTransferProhibited", "clientUpdateProhibited"],

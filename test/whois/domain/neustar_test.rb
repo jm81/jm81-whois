@@ -6,7 +6,7 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     assert_whois_data(EXP_BIZ.merge({:to_s => EXP_TO_S}))
     assert Whois::Domain.new("not-reg-1234.biz").available?
   end
-  
+
   def test_us
     assert_whois_data(EXP_US)
     assert Whois::Domain.new("not-reg-1234.us").available?
@@ -29,20 +29,20 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     :status => ['clientDeleteProhibited', 'clientTransferProhibited', 'clientUpdateProhibited', 'serverDeleteProhibited', 'serverTransferProhibited', 'serverUpdateProhibited'],
     :name_servers => ['PDNS1.ULTRADNS.NET', 'PDNS2.ULTRADNS.NET', 'PDNS3.ULTRADNS.ORG', 'PDNS4.ULTRADNS.ORG', 'PDNS5.ULTRADNS.INFO', 'PDNS6.ULTRADNS.CO.UK']
   }
-  
+
   EXP_US = {
     :name => "neustar.us",
     :kind => "Neustar",
     :created_on => '2002-04-18',
-    :updated_on => '2010-06-02',
-    :expires_on => '2011-04-17',
+    :updated_on => '2011-06-02',
+    :expires_on => '2012-04-17',
     :registrar_name => "REGISTRY REGISTRAR",
     :whois_server => "whois.nic.us",
     :raw_match => "Domain Name:                                 NEUSTAR.US",
     :status => ['clientDeleteProhibited', 'clientTransferProhibited', 'serverDeleteProhibited', 'serverTransferProhibited', 'serverUpdateProhibited'],
     :name_servers => ['GDNS1.ULTRADNS.NET', 'GDNS2.ULTRADNS.NET']
   }
-  
+
   EXP_TRAVEL = {
     :name => "travel.travel",
     :kind => "Neustar",
@@ -56,7 +56,7 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     :status => ['ok'],
     :name_servers => ['NS01-MIA.THEGLOBE.COM', 'NETSYS.COM']
   }
-  
+
   EXP_TO_S = <<EOF
 Domain Name: NEULEVEL.BIZ
 Domain ID: D592-BIZ

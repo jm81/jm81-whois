@@ -5,7 +5,7 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     assert_whois_data(EXP_COM.merge({:to_s => EXP_COM_TO_S}))
     assert Whois::Domain.new("not-reg-1234.com").available?
   end
-  
+
   def test_net
     assert_whois_data(EXP_NET)
     assert Whois::Domain.new("not-reg-1234.net").available?
@@ -33,7 +33,7 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :status => ['clientDeleteProhibited', 'clientTransferProhibited', 'clientUpdateProhibited'],
     :name_servers => ['A.IANA-SERVERS.NET', 'B.IANA-SERVERS.NET']
   }
-  
+
   EXP_NET = {
     :name => "example.net",
     :kind => "VerisignGrs",
@@ -46,12 +46,12 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :status => ['clientDeleteProhibited', 'clientTransferProhibited', 'clientUpdateProhibited'],
     :name_servers => ['A.IANA-SERVERS.NET', 'B.IANA-SERVERS.NET']
   }
-  
+
   EXP_JOBS = {
     :name => "goto.jobs",
     :kind => "VerisignGrs",
     :created_on => "2010-02-04",
-    :updated_on => "2010-02-04",
+    :updated_on => "2011-02-05",
     :expires_on => "2012-02-04",
     :registrar_name => "NAME SHARE, INC",
     :whois_server => "whois.nameshare.com",
@@ -59,20 +59,20 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :status => ['ACTIVE'],
     :name_servers => ['NS2.REGISTRY.JOBS', 'NS1.REGISTRY.JOBS']
   }
-  
+
   EXP_TV = {
     :name => "www.tv",
     :kind => "VerisignGrs",
     :created_on => "2000-05-01",
     :updated_on => "2010-10-05",
     :expires_on => "2038-01-18",
-    :registrar_name => "TUCOWS INC.",
+    :registrar_name => "TUCOWS.COM CO.",
     :whois_server => "whois.tucows.com",
     :raw_match => "Domain name: WWW.TV",
     :status => ["CLIENT-XFER-PROHIBITED", "CLIENT-UPDATE-PROHIBITED"],
     :name_servers => ['A4.NSTLD.COM', 'F4.NSTLD.COM', 'G4.NSTLD.COM', 'H4.NSTLD.COM', 'J4.NSTLD.COM', 'L4.NSTLD.COM', 'K4.NSTLD.COM']
   }
-  
+
   EXP_COM_TO_S = <<EOF
 Domain Name: EXAMPLE.COM
 Registrar: RESERVED-INTERNET ASSIGNED NUMBERS AUTHORITY
