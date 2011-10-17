@@ -25,8 +25,8 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "example.com",
     :kind => "VerisignGrs",
     :created_on => "1995-08-14",
-    :updated_on => "2011-04-19",
-    :expires_on => "2011-08-13",
+    :updated_on => "2011-08-14",
+    :expires_on => "2012-08-13",
     :registrar_name => "RESERVED-INTERNET ASSIGNED NUMBERS AUTHORITY",
     :whois_server => "whois.iana.org",
     :raw_match => "Domain Name: EXAMPLE.COM",
@@ -38,8 +38,8 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "example.net",
     :kind => "VerisignGrs",
     :created_on => "1995-08-31",
-    :updated_on => "2011-04-19",
-    :expires_on => "2011-08-30",
+    :updated_on => "2011-08-31",
+    :expires_on => "2012-08-30",
     :registrar_name => "RESERVED-INTERNET ASSIGNED NUMBERS AUTHORITY",
     :whois_server => "whois.iana.org",
     :raw_match => "Domain Name: EXAMPLE.NET",
@@ -64,7 +64,7 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "www.tv",
     :kind => "VerisignGrs",
     :created_on => "2000-05-01",
-    :updated_on => "2010-10-05",
+    :updated_on => "2011-09-12",
     :expires_on => "2038-01-18",
     :registrar_name => "TUCOWS.COM CO.",
     :whois_server => "whois.tucows.com",
@@ -83,8 +83,8 @@ Name Server: B.IANA-SERVERS.NET
 Status: clientDeleteProhibited
 Status: clientTransferProhibited
 Status: clientUpdateProhibited
-Updated Date: 19-apr-2011
+Updated Date: 14-aug-2011
 Creation Date: 14-aug-1995
-Expiration Date: 13-aug-2011
+Expiration Date: 13-aug-2012
 EOF
 end
