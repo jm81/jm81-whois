@@ -21,8 +21,8 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     :name => "neulevel.biz",
     :kind => "Neustar",
     :created_on => '2001-11-07',
-    :updated_on => '2010-12-22',
-    :expires_on => '2011-11-06',
+    :updated_on => '2011-12-22',
+    :expires_on => '2012-11-06',
     :registrar_name => "REGISTRY REGISTRAR",
     :whois_server => "whois.biz",
     :raw_match => "Domain Name:                                 NEULEVEL.BIZ",
@@ -129,7 +129,7 @@ Name Server: PDNS6.ULTRADNS.CO.UK
 Created by Registrar: REGISTRY REGISTRAR
 Last Updated by Registrar: BATCHCSR
 Domain Registration Date: Wed Nov 07 00:01:00 GMT 2001
-Domain Expiration Date: Sun Nov 06 23:59:00 GMT 2011
-Domain Last Updated Date: Wed Dec 22 01:40:59 GMT 2010
+Domain Expiration Date: Tue Nov 06 23:59:00 GMT 2012
+Domain Last Updated Date: Thu Dec 22 01:41:03 GMT 2011
 EOF
 end

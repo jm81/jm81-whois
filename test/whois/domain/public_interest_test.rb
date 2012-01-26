@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Whois::Domain::PublicInterestTest < Test::Unit::TestCase
 
-  def test_whois  
+  def test_whois
     assert_whois_data(EXP_DATA.merge({:to_s => EXP_TO_S}))
     assert Whois::Domain.new("not-reg-1234.org").available?
   end
@@ -20,7 +20,7 @@ class Whois::Domain::PublicInterestTest < Test::Unit::TestCase
     :status => ['DELETE PROHIBITED', 'RENEW PROHIBITED', 'TRANSFER PROHIBITED', 'UPDATE PROHIBITED'],
     :name_servers => ['A.IANA-SERVERS.NET', 'B.IANA-SERVERS.NET']
   }
-    
+
   EXP_TO_S = <<EOF
 Domain ID: D2328855-LROR
 Domain Name: EXAMPLE.ORG
@@ -72,17 +72,17 @@ Name Server: A.IANA-SERVERS.NET
 Name Server: B.IANA-SERVERS.NET
 DNSSEC: Signed
 DS Created 1: 27-Jul-2010 20:57:22 UTC
-DS Maximum Signature Life 1: 3456000 seconds
 DS Key Tag 1: 31589
 Algorithm 1: 8
 Digest Type 1: 1
 Digest 1: 7b8370002875dda781390a8e586c31493847d9bc
+DS Maximum Signature Life 1: 1814400 seconds
 DS Created 2: 27-Jul-2010 20:57:36 UTC
-DS Maximum Signature Life 2: 3456000 seconds
 DS Key Tag 2: 31589
 Algorithm 2: 8
 Digest Type 2: 2
 Digest 2: 3fdc4c11fa3ad3535ea8c1ce3eaf7bfa5ca9ae8a834d98fee10085cfaeb625aa
+DS Maximum Signature Life 2: 1814400 seconds
 EOF
 
 end
