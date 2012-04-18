@@ -9,11 +9,11 @@ class Whois::Domain::Museum < Whois::Domain::Base
     :updated_on => "Last Updated On",
     :expires_on => "Expiration Date"
   }
-  
+
   def available?
     @raw =~ /NOT FOUND/
   end
-  
+
   def register_url
     "http://about.museum/register/"
   end
