@@ -11,13 +11,13 @@ class Whois::Domain::MobiTest < Test::Unit::TestCase
     :name => "mtld.mobi",
     :kind => "Mobi",
     :created_on => '2006-05-11',
-    :updated_on => '2012-04-09',
-    :expires_on => '2014-05-11',
+    :updated_on => '2012-05-23',
+    :expires_on => '2015-05-11',
     :database_updated_at => false,
-    :registrar_name => "MarkMonitor Inc. (292)",
+    :registrar_name => "CSC Corporate Domains, Inc (299)",
     :whois_server => "whois.dotmobiregistry.net",
     :raw_match => "Domain Name:MTLD.MOBI",
-    :status => ['CLIENT DELETE PROHIBITED', 'CLIENT TRANSFER PROHIBITED', 'CLIENT UPDATE PROHIBITED'],
+    :status => ['CLIENT TRANSFER PROHIBITED', 'TRANSFER PROHIBITED'],
     :name_servers => ['E.SERVICE.AFILIASDNS.INFO', 'A.SERVICE.AFILIASDNS.INFO', 'F.SERVICE.AFILIASDNS.NET', 'D.SERVICE.AFILIASDNS.COM', 'C.SERVICE.AFILIASDNS.NET', 'B.SERVICE.AFILIASDNS.ORG']
   }
 

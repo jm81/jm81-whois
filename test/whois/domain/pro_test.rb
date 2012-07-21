@@ -14,14 +14,14 @@ class Whois::Domain::ProTest < Test::Unit::TestCase
     :name => "registrypro.pro",
     :kind => "Pro",
     :created_on => '2004-08-18',
-    :updated_on => '2012-04-16',
+    :updated_on => '2012-06-14',
     :expires_on => '2017-01-26',
     :database_updated_at => false,
-    :registrar_name => 'CSC Corporate Domains, Inc.',
+    :registrar_name => 'Corporation Service Company dba CSC Corporate Domains, Inc (R2338-PRO)',
     :whois_server => "whois.registrypro.pro",
     :raw_match => "Domain Name:REGISTRYPRO.PRO",
-    :status => ['serverDeleteProhibited'],
-    :name_servers => ['A.GTLD.PRO', 'B.GTLD.PRO', 'C.GTLD.PRO', 'D.GTLD.PRO']
+    :status => ['CLIENT TRANSFER PROHIBITED'],
+    :name_servers => ['NS1.AMS1.AFILIAS-NST.INFO', 'NS1.MIA1.AFILIAS-NST.INFO', 'NS1.SEA1.AFILIAS-NST.INFO', 'NS1.YYZ1.AFILIAS-NST.INFO', 'NS1.HKG1.AFILIAS-NST.INFO']
   }
 
 end
