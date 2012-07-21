@@ -123,7 +123,7 @@ class Whois::Domain::Base
   # ==== Parameters
   # attr_name<Symbol>:: Matches the method name
   def attr_array(attr_name)
-    attrs[attr_names[attr_name]] || []
+    (attrs[attr_names[attr_name]] || []).select { |val| val && val != '' }
   end
 
   private :attr_single, :attr_date, :attr_array
