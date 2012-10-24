@@ -1,8 +1,8 @@
 class Whois::Domain::VerisignGrs < Whois::Domain::Base
   HOST = "whois.verisign-grs.com"
   ATTR_MATCH = /^   ([^:]+):\W*(.*)$/
-  responds_to :com, :net, :jobs, :tv
-  
+  responds_to :com, :net
+
   def initialize(name)
     @name = name
     @host = nil
@@ -19,7 +19,7 @@ class Whois::Domain::VerisignGrs < Whois::Domain::Base
       @raw = old_raw if (@raw =~ /not available/)
     end
   end
-  
+
   def host
     return @host unless @host.nil?
 
@@ -42,17 +42,17 @@ class Whois::Domain::VerisignGrs < Whois::Domain::Base
     /Last update of whois database: ([^<]*)/,
     /Record last updated on ([^\.]*)/
   ]
-  
+
   def database_updated_at
     DATABASE_UPDATED_AT_REGEXES.each do |regex|
       if (match_data = @raw.match(regex))
         return Time.parse(match_data[1])
       end
     end
-    
+
     return nil
   end
-  
+
   def available?
     @raw =~ /^No match for/
   end

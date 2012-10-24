@@ -71,17 +71,17 @@ Tech Email: res-dom@iana.org
 Name Server: A.IANA-SERVERS.NET
 Name Server: B.IANA-SERVERS.NET
 DNSSEC: Signed
-DS Created 1: 27-Jul-2010 20:57:22 UTC
+DS Created 1: 27-Jul-2010 20:57:36 UTC
 DS Key Tag 1: 31589
 Algorithm 1: 8
-Digest Type 1: 1
-Digest 1: 7b8370002875dda781390a8e586c31493847d9bc
+Digest Type 1: 2
+Digest 1: 3fdc4c11fa3ad3535ea8c1ce3eaf7bfa5ca9ae8a834d98fee10085cfaeb625aa
 DS Maximum Signature Life 1: 1814400 seconds
-DS Created 2: 27-Jul-2010 20:57:36 UTC
+DS Created 2: 27-Jul-2010 20:57:22 UTC
 DS Key Tag 2: 31589
 Algorithm 2: 8
-Digest Type 2: 2
-Digest 2: 3fdc4c11fa3ad3535ea8c1ce3eaf7bfa5ca9ae8a834d98fee10085cfaeb625aa
+Digest Type 2: 1
+Digest 2: 7b8370002875dda781390a8e586c31493847d9bc
 DS Maximum Signature Life 2: 1814400 seconds
 EOF
 
