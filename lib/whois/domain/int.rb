@@ -8,15 +8,15 @@ class Whois::Domain::Int < Whois::Domain::Base
     :updated_on => 'changed',
     :name_servers => 'nserver'
   }
-  
+
   def registrar_name
     ".int Domain Registry (IANA)"
   end
-  
+
   def available?
-     @raw =~ /domain:       INT/
+     @raw =~ /returned 0 objects/
   end
-  
+
   def name_servers
     # Remove IP address.
     super.collect{ |ns| ns.match(/\A([\S]*)\s/)[1] }
