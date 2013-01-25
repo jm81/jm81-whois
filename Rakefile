@@ -1,6 +1,6 @@
 require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rdoc/task'
 require 'rubygems'
 require File.join(File.dirname(__FILE__), 'lib', 'whois', 'version')
 
@@ -11,7 +11,7 @@ begin
     gem.version = Whois::VERSION.dup
     gem.summary = %Q{Ruby library for accessing Whois information}
     gem.description = <<EOF
-This library presents whois information for domains in a variety of TLD's 
+This library presents whois information for domains in a variety of TLD's
 through a standardized API.
 EOF
     gem.email = "jmorgan@morgancreative.net"
@@ -40,7 +40,7 @@ Rake::RDocTask.new do |rdoc|
   else
     version = ""
   end
-  
+
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'Whois #{version}'
   rdoc.options << '--line-numbers' << '--inline-source'

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Whois::Domain::IntTest < Test::Unit::TestCase
 
-  def test_whois  
+  def test_whois
     assert_whois_data(EXP_DATA)
     assert Whois::Domain.new("not-reg-1234.int").available?
   end

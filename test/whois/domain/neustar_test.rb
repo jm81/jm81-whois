@@ -21,8 +21,8 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     :name => "neulevel.biz",
     :kind => "Neustar",
     :created_on => '2001-11-07',
-    :updated_on => '2011-12-22',
-    :expires_on => '2012-11-06',
+    :updated_on => '2012-12-22',
+    :expires_on => '2013-11-06',
     :registrar_name => "REGISTRY REGISTRAR",
     :whois_server => "whois.biz",
     :raw_match => "Domain Name:                                 NEULEVEL.BIZ",
@@ -34,13 +34,13 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     :name => "neustar.us",
     :kind => "Neustar",
     :created_on => '2002-04-18',
-    :updated_on => '2012-06-02',
+    :updated_on => '2012-12-27',
     :expires_on => '2013-04-17',
     :registrar_name => "REGISTRY REGISTRAR",
     :whois_server => "whois.nic.us",
     :raw_match => "Domain Name:                                 NEUSTAR.US",
     :status => ['clientDeleteProhibited', 'clientTransferProhibited', 'serverDeleteProhibited', 'serverTransferProhibited', 'serverUpdateProhibited'],
-    :name_servers => ['GDNS1.ULTRADNS.NET', 'GDNS2.ULTRADNS.NET']
+    :name_servers => ['PDNS1.ULTRADNS.NET', 'PDNS2.ULTRADNS.NET',  'PDNS3.ULTRADNS.ORG', 'PDNS4.ULTRADNS.ORG', 'PDNS5.ULTRADNS.INFO', 'PDNS6.ULTRADNS.CO.UK']
   }
 
   EXP_TRAVEL = {
@@ -129,7 +129,7 @@ Name Server: PDNS6.ULTRADNS.CO.UK
 Created by Registrar: REGISTRY REGISTRAR
 Last Updated by Registrar: BATCHCSR
 Domain Registration Date: Wed Nov 07 00:01:00 GMT 2001
-Domain Expiration Date: Tue Nov 06 23:59:00 GMT 2012
-Domain Last Updated Date: Thu Dec 22 01:41:03 GMT 2011
+Domain Expiration Date: Wed Nov 06 23:59:00 GMT 2013
+Domain Last Updated Date: Sat Dec 22 01:41:06 GMT 2012
 EOF
 end

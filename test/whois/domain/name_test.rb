@@ -14,7 +14,7 @@ class Whois::Domain::NameTest < Test::Unit::TestCase
     :updated_on => '2011-08-08',
     :expires_on => '2013-08-08',
     :database_updated_at => false,
-    :registrar_name => "Tucows.com Co.",
+    :registrar_name => "Tucows Domains Inc.",
     :whois_server => "whois.nic.name",
     :raw_match => "Domain Name: JOE.SMITH.NAME",
     :status => ["clientTransferProhibited", "clientUpdateProhibited"],
