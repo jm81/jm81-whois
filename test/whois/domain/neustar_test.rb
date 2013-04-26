@@ -34,7 +34,7 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     :name => "neustar.us",
     :kind => "Neustar",
     :created_on => '2002-04-18',
-    :updated_on => '2012-12-27',
+    :updated_on => '2013-02-22',
     :expires_on => '2013-04-17',
     :registrar_name => "REGISTRY REGISTRAR",
     :whois_server => "whois.nic.us",

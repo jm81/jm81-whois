@@ -15,7 +15,7 @@ class Whois::Domain::CoopTest < Test::Unit::TestCase
     :name => "domains.coop",
     :kind => "Coop",
     :created_on => "2002-07-09",
-    :updated_on => "2011-06-23",
+    :updated_on => "2013-04-23",
     :expires_on => "2016-07-09",
     :database_updated_at => false,
     :registrar_name => "domains.coop",
