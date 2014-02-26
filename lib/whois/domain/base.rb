@@ -114,7 +114,7 @@ class Whois::Domain::Base
   # ==== Parameters
   # attr_name<Symbol>:: Matches the method name
   def attr_date(attr_name)
-    attrs[attr_names[attr_name]] ? Date.parse(attrs[attr_names[attr_name]][0]) : nil
+    attrs[attr_names[attr_name]][0] ? Date.parse(attrs[attr_names[attr_name]][0]) : nil
   end
 
   # Return all values of an attribute as an Array. It is
