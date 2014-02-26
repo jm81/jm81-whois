@@ -9,6 +9,9 @@ sudo gem install jm81-whois
 
 ##Example
 
+    require 'whois'
+    domain = Whois::Domain.new('example.com')
+
     domain.name         #=> "example.com"
     domain.expires_on   #=> 2011-08-13 <Date>
     domain.created_on   #=> 1995-08-14 <Date>
@@ -27,11 +30,11 @@ sudo gem install jm81-whois
     domain.to_s # Key value pairs of anything that looks like an attribute.
                 # Especially useful for non-API information, such as registrant
                 # data.
-    
+
 ##Code layout
 
 Since pretty much every TLD has a different whois format, the various classes
-(which inherit from Domain::Base) in the Domain module (files in domain folder) 
+(which inherit from Domain::Base) in the Domain module (files in domain folder)
 have the following:
 
 - HOST constant: the host name of the whois server
@@ -50,7 +53,7 @@ insufficient (particular likely for lists of values, such as *status* and
 
 ##Note on Tests
 
-Tests are against actual whois data and thus are somewhat brittle, especially 
+Tests are against actual whois data and thus are somewhat brittle, especially
 *expires_at* and *updated_at*.
 
 ##TODO
