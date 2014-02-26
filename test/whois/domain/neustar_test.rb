@@ -21,8 +21,8 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     :name => "neulevel.biz",
     :kind => "Neustar",
     :created_on => '2001-11-07',
-    :updated_on => '2012-12-22',
-    :expires_on => '2013-11-06',
+    :updated_on => '2013-12-22',
+    :expires_on => '2014-11-06',
     :registrar_name => "REGISTRY REGISTRAR",
     :whois_server => "whois.biz",
     :raw_match => "Domain Name:                                 NEULEVEL.BIZ",
@@ -34,8 +34,8 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     :name => "neustar.us",
     :kind => "Neustar",
     :created_on => '2002-04-18',
-    :updated_on => '2013-02-22',
-    :expires_on => '2013-04-17',
+    :updated_on => '2013-06-02',
+    :expires_on => '2014-04-17',
     :registrar_name => "REGISTRY REGISTRAR",
     :whois_server => "whois.nic.us",
     :raw_match => "Domain Name:                                 NEUSTAR.US",
@@ -47,7 +47,7 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
     :name => "travel.travel",
     :kind => "Neustar",
     :created_on => "2005-10-04",
-    :updated_on => "2010-11-22",
+    :updated_on => "2013-09-18",
     :expires_on => "2021-10-03",
     :database_updated_at => true,
     :registrar_name => "NEUSTAR GATEWAY",
@@ -61,6 +61,7 @@ class Whois::Domain::NeustarTest < Test::Unit::TestCase
 Domain Name: NEULEVEL.BIZ
 Domain ID: D592-BIZ
 Sponsoring Registrar: REGISTRY REGISTRAR
+Sponsoring Registrar IANA ID: 44148880
 Registrar URL (registration services): WWW.NEUSTARREGISTRY.BIZ
 Domain Status: clientDeleteProhibited
 Domain Status: clientTransferProhibited
@@ -129,7 +130,7 @@ Name Server: PDNS6.ULTRADNS.CO.UK
 Created by Registrar: REGISTRY REGISTRAR
 Last Updated by Registrar: BATCHCSR
 Domain Registration Date: Wed Nov 07 00:01:00 GMT 2001
-Domain Expiration Date: Wed Nov 06 23:59:00 GMT 2013
-Domain Last Updated Date: Sat Dec 22 01:41:06 GMT 2012
+Domain Expiration Date: Thu Nov 06 23:59:00 GMT 2014
+Domain Last Updated Date: Sun Dec 22 01:41:58 GMT 2013
 EOF
 end

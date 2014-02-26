@@ -15,8 +15,8 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "example.com",
     :kind => "VerisignGrs",
     :created_on => "1995-08-14",
-    :updated_on => "2012-08-14",
-    :expires_on => "2013-08-13",
+    :updated_on => "2013-08-14",
+    :expires_on => "2014-08-13",
     :registrar_name => "RESERVED-INTERNET ASSIGNED NUMBERS AUTHORITY",
     :whois_server => "whois.iana.org",
     :raw_match => "Domain Name: EXAMPLE.COM",
@@ -28,8 +28,8 @@ class Whois::Domain::VerisignGrsTest < Test::Unit::TestCase
     :name => "example.net",
     :kind => "VerisignGrs",
     :created_on => "1995-08-31",
-    :updated_on => "2012-08-31",
-    :expires_on => "2013-08-30",
+    :updated_on => "2013-08-31",
+    :expires_on => "2014-08-30",
     :registrar_name => "RESERVED-INTERNET ASSIGNED NUMBERS AUTHORITY",
     :whois_server => "whois.iana.org",
     :raw_match => "Domain Name: EXAMPLE.NET",
@@ -47,8 +47,8 @@ Name Server: B.IANA-SERVERS.NET
 Status: clientDeleteProhibited
 Status: clientTransferProhibited
 Status: clientUpdateProhibited
-Updated Date: 14-aug-2012
+Updated Date: 14-aug-2013
 Creation Date: 14-aug-1995
-Expiration Date: 13-aug-2013
+Expiration Date: 13-aug-2014
 EOF
 end

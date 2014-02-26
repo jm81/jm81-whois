@@ -39,8 +39,8 @@ class Whois::Domain::VerisignGrs < Whois::Domain::Base
   end
 
   DATABASE_UPDATED_AT_REGEXES = [
-    /Last update of whois database: ([^<]*)/,
-    /Record last updated on ([^\.]*)/
+    /Last update of whois database: ([^<]*)/i,
+    /Record last updated on ([^\.]*)/i
   ]
 
   def database_updated_at
